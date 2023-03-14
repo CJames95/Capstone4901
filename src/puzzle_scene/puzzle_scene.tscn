@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://bjmbww3yca2th"]
+
+[ext_resource type="PackedScene" uid="uid://fm5wsjr7eep7" path="res://puzzle_piece.tscn" id="1_c2hol"]
+
+[node name="Puzzle Scene" type="Node"]
+
+[node name="Node2D" parent="." instance=ExtResource("1_c2hol")]
+position = Vector2(438, 309)
