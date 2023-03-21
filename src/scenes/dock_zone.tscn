@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://d08dc7rb2ypmm"]
+
+[ext_resource type="Script" path="res://src/scripts/dock_zone.gd" id="1_ec15n"]
+
+[node name="dock_zone" type="Marker2D" groups=["zone"]]
+script = ExtResource("1_ec15n")

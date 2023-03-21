@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://dxhsd0dsy5eig"]
+
+[ext_resource type="Script" path="res://src/scripts/test_drag_and_drop.gd" id="1_qt514"]
+[ext_resource type="Texture2D" uid="uid://c8cgcwehgqaxe" path="res://icon.svg" id="2_e2aqy"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xqwse"]
+radius = 50.0
+
+[node name="Node2D" type="Node2D"]
+top_level = true
+script = ExtResource("1_qt514")
+
+[node name="Icon" type="Sprite2D" parent="."]
+texture = ExtResource("2_e2aqy")
+
+[node name="Area2D" type="Area2D" parent="Icon"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Icon/Area2D"]
+shape = SubResource("CircleShape2D_xqwse")
+
+[connection signal="input_event" from="Icon/Area2D" to="." method="_on_area_2d_input_event"]

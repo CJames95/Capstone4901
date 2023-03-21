@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://cs1gfalhewjt4"]
+
+[ext_resource type="Script" path="res://src/scripts/searchbar_drag_and_drop.gd" id="1_yn7to"]
+[ext_resource type="Texture2D" uid="uid://u4shl70bs3mx" path="res://src/art/search_scaled.png" id="2_bfyqk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4ejex"]
+size = Vector2(700, 60)
+
+[node name="Node2D" type="Node2D" groups=["searchbar"]]
+script = ExtResource("1_yn7to")
+
+[node name="Search" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_bfyqk")
+
+[node name="Area2D" type="Area2D" parent="Search"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Search/Area2D"]
+shape = SubResource("RectangleShape2D_4ejex")
+
+[connection signal="input_event" from="Search/Area2D" to="." method="_on_area_2d_input_event"]

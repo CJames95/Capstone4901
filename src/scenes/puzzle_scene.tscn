@@ -1,0 +1,165 @@
+[gd_scene load_steps=11 format=3 uid="uid://co4xqvmvk4026"]
+
+[ext_resource type="Texture2D" uid="uid://bqu61m6tx2njt" path="res://src/art/browser_scaled.png" id="1_l472v"]
+[ext_resource type="PackedScene" uid="uid://bhlt8k8851465" path="res://src/scenes/search_grab_zone.tscn" id="2_28v2e"]
+[ext_resource type="Texture2D" uid="uid://evqnhhcs1weo" path="res://src/art/return_button.png" id="2_c6etu"]
+[ext_resource type="Script" path="res://src/scripts/return_button.gd" id="2_grx1g"]
+[ext_resource type="Texture2D" uid="uid://btafu8sdwcfgt" path="res://src/art/slot.png" id="3_kqdij"]
+[ext_resource type="Script" path="res://src/scripts/workspace.gd" id="4_dbk1r"]
+[ext_resource type="Texture2D" uid="uid://dlrcq0b64g4vm" path="res://src/art/hint_box.png" id="5_lj1gy"]
+[ext_resource type="Script" path="res://src/scripts/escape_menu.gd" id="8_ahkn5"]
+
+[sub_resource type="Theme" id="Theme_qn0no"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qvak1"]
+bg_color = Color(0.105882, 0.109804, 0.121569, 1)
+
+[node name="Puzzle Scene" type="Node"]
+
+[node name="Workspace" type="HBoxContainer" parent="."]
+offset_right = 1920.0
+offset_bottom = 1080.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Workspace"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.85
+
+[node name="Browser Texture" type="TextureRect" parent="Workspace/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.85
+texture = ExtResource("1_l472v")
+expand_mode = 1
+
+[node name="Return Button" type="Button" parent="Workspace/VBoxContainer/Browser Texture"]
+visible = false
+layout_mode = 0
+offset_left = 1589.0
+offset_right = 1628.0
+offset_bottom = 31.0
+script = ExtResource("2_grx1g")
+
+[node name="CloseButton" type="TextureRect" parent="Workspace/VBoxContainer/Browser Texture/Return Button"]
+layout_mode = 0
+offset_right = 39.0
+offset_bottom = 31.0
+texture = ExtResource("2_c6etu")
+
+[node name="Container" type="Container" parent="Workspace/VBoxContainer/Browser Texture"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -810.0
+offset_top = -840.0
+offset_right = 810.0
+grow_horizontal = 2
+grow_vertical = 0
+script = ExtResource("4_dbk1r")
+
+[node name="HintBox" type="TextureRect" parent="Workspace/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.15
+texture = ExtResource("5_lj1gy")
+
+[node name="UI Tray" type="ScrollContainer" parent="Workspace"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.15
+theme = SubResource("Theme_qn0no")
+theme_override_styles/panel = SubResource("StyleBoxFlat_qvak1")
+vertical_scroll_mode = 2
+
+[node name="Vertical Box Container" type="VBoxContainer" parent="Workspace/UI Tray"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Slot" parent="Workspace/UI Tray/Vertical Box Container" instance=ExtResource("2_28v2e")]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Slot 2" type="TextureRect" parent="Workspace/UI Tray/Vertical Box Container"]
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("3_kqdij")
+
+[node name="Slot 3" type="TextureRect" parent="Workspace/UI Tray/Vertical Box Container"]
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("3_kqdij")
+
+[node name="Slot 4" type="TextureRect" parent="Workspace/UI Tray/Vertical Box Container"]
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("3_kqdij")
+
+[node name="Slot 5" type="TextureRect" parent="Workspace/UI Tray/Vertical Box Container"]
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("3_kqdij")
+
+[node name="Slot 6" type="TextureRect" parent="Workspace/UI Tray/Vertical Box Container"]
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("3_kqdij")
+
+[node name="Slot 7" type="TextureRect" parent="Workspace/UI Tray/Vertical Box Container"]
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("3_kqdij")
+
+[node name="Slot 8" type="TextureRect" parent="Workspace/UI Tray/Vertical Box Container"]
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("3_kqdij")
+
+[node name="Slot 9" type="TextureRect" parent="Workspace/UI Tray/Vertical Box Container"]
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("3_kqdij")
+
+[node name="Escape Menu" type="SubViewportContainer" parent="."]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -128.0
+offset_top = -64.0
+offset_right = 128.0
+offset_bottom = 64.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("8_ahkn5")
+
+[node name="Escape Menu Viewport" type="SubViewport" parent="Escape Menu"]
+disable_3d = true
+handle_input_locally = false
+size = Vector2i(256, 128)
+render_target_update_mode = 0
+
+[node name="Exit Game Button" type="Button" parent="Escape Menu/Escape Menu Viewport"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -64.0
+offset_top = -16.0
+offset_right = 64.0
+offset_bottom = 16.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Exit Game"
+
+[connection signal="button_down" from="Workspace/VBoxContainer/Browser Texture/Return Button" to="Workspace/VBoxContainer/Browser Texture/Return Button" method="_on_button_down"]
+[connection signal="button_down" from="Escape Menu/Escape Menu Viewport/Exit Game Button" to="Escape Menu" method="_on_exit_game_button_button_down"]
