@@ -19,6 +19,7 @@ func _ready():
 func _on_area_2d_input_event(viewport, event, shape_idx):
 	if Input.is_action_just_pressed("click") or created == true and Input.is_action_pressed("click"):
 		selected = true
+ 
 
 # This function handles the physics of moving the searchbar.
 # If selected is true, then change the searchbar's position at a speed of
