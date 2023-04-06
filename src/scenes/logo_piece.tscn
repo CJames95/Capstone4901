@@ -6,7 +6,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4ejex"]
 size = Vector2(500, 500)
 
-[node name="Node2D" type="Node2D"]
+[node name="Logo Piece" type="Node2D"]
 script = ExtResource("1_qvpke")
 
 [node name="Logo" type="Sprite2D" parent="."]

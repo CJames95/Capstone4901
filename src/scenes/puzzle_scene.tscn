@@ -1,9 +1,9 @@
 [gd_scene load_steps=14 format=3 uid="uid://co4xqvmvk4026"]
 
 [ext_resource type="Texture2D" uid="uid://bqu61m6tx2njt" path="res://src/art/browser_scaled.png" id="1_l472v"]
+[ext_resource type="Script" path="res://src/scripts/puzzle_scene.gd" id="1_ow6d3"]
 [ext_resource type="PackedScene" uid="uid://bhlt8k8851465" path="res://src/scenes/search_grab_zone.tscn" id="2_28v2e"]
 [ext_resource type="Texture2D" uid="uid://evqnhhcs1weo" path="res://src/art/return_button.png" id="2_c6etu"]
-[ext_resource type="Script" path="res://src/scripts/return_button.gd" id="2_grx1g"]
 [ext_resource type="Texture2D" uid="uid://btafu8sdwcfgt" path="res://src/art/slot.png" id="3_kqdij"]
 [ext_resource type="Script" path="res://src/scripts/workspace.gd" id="4_dbk1r"]
 [ext_resource type="Texture2D" uid="uid://dlrcq0b64g4vm" path="res://src/art/hint_box.png" id="5_lj1gy"]
@@ -21,6 +21,7 @@ radius = 60.0
 height = 248.0
 
 [node name="Puzzle Scene" type="Node"]
+script = ExtResource("1_ow6d3")
 
 [node name="Workspace" type="HBoxContainer" parent="."]
 offset_right = 1920.0
@@ -50,15 +51,13 @@ offset_right = 895.0
 offset_bottom = 63.0
 text = "https://www.searchcurry.cat"
 
-[node name="Return Button" type="Button" parent="Workspace/VBoxContainer/Browser Texture"]
-visible = false
+[node name="Finish Button" type="Button" parent="Workspace/VBoxContainer/Browser Texture"]
 layout_mode = 0
 offset_left = 1589.0
 offset_right = 1628.0
 offset_bottom = 31.0
-script = ExtResource("2_grx1g")
 
-[node name="CloseButton" type="TextureRect" parent="Workspace/VBoxContainer/Browser Texture/Return Button"]
+[node name="CloseButton" type="TextureRect" parent="Workspace/VBoxContainer/Browser Texture/Finish Button"]
 layout_mode = 0
 offset_right = 39.0
 offset_bottom = 31.0
@@ -198,8 +197,66 @@ grow_horizontal = 2
 grow_vertical = 2
 text = "Exit Game"
 
-[connection signal="button_down" from="Workspace/VBoxContainer/Browser Texture/Return Button" to="Workspace/VBoxContainer/Browser Texture/Return Button" method="_on_button_down"]
+[node name="End Puzzle Confirmation" type="SubViewportContainer" parent="."]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -128.0
+offset_top = -64.0
+offset_right = 128.0
+offset_bottom = 64.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="End Puzzle Confirmation Viewport" type="SubViewport" parent="End Puzzle Confirmation"]
+handle_input_locally = false
+size = Vector2i(256, 128)
+render_target_update_mode = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="End Puzzle Confirmation/End Puzzle Confirmation Viewport"]
+custom_minimum_size = Vector2(0, 96)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -98.0
+offset_top = -20.0
+offset_right = 98.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="RichTextLabel" type="RichTextLabel" parent="End Puzzle Confirmation/End Puzzle Confirmation Viewport/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+bbcode_enabled = true
+text = "[center]Are you sure you want to finish this puzzle?[/center]"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="End Puzzle Confirmation/End Puzzle Confirmation Viewport/VBoxContainer"]
+layout_mode = 2
+
+[node name="Yes" type="Button" parent="End Puzzle Confirmation/End Puzzle Confirmation Viewport/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Yes"
+
+[node name="No" type="Button" parent="End Puzzle Confirmation/End Puzzle Confirmation Viewport/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "No"
+
+[connection signal="button_down" from="Workspace/VBoxContainer/Browser Texture/Finish Button" to="." method="_on_finish_button_button_down"]
 [connection signal="area_shape_entered" from="Workspace/UI Tray/Vertical Box Container/Logo/Area2D" to="Workspace/UI Tray/Vertical Box Container/Logo" method="_on_area_2d_area_shape_entered"]
 [connection signal="area_shape_exited" from="Workspace/UI Tray/Vertical Box Container/Logo/Area2D" to="Workspace/UI Tray/Vertical Box Container/Logo" method="_on_area_2d_area_shape_exited"]
 [connection signal="input_event" from="Workspace/UI Tray/Vertical Box Container/Logo/Area2D" to="Workspace/UI Tray/Vertical Box Container/Logo" method="_on_area_2d_input_event"]
 [connection signal="button_down" from="Escape Menu/Escape Menu Viewport/Exit Game Button" to="Escape Menu" method="_on_exit_game_button_button_down"]
+[connection signal="button_down" from="End Puzzle Confirmation/End Puzzle Confirmation Viewport/VBoxContainer/HBoxContainer/Yes" to="." method="_on_yes_button_down"]
+[connection signal="button_down" from="End Puzzle Confirmation/End Puzzle Confirmation Viewport/VBoxContainer/HBoxContainer/No" to="." method="_on_no_button_down"]

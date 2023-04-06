@@ -15,7 +15,7 @@ bg_color = Color(0.341176, 0.607843, 0.945098, 1)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3bash"]
 bg_color = Color(0.341176, 0.607843, 0.945098, 1)
 
-[node name="Node2D" type="Node2D" groups=["searchbar"]]
+[node name="Search Bar Piece" type="Node2D" groups=["searchbar"]]
 script = ExtResource("1_yn7to")
 
 [node name="Search" type="Sprite2D" parent="."]
