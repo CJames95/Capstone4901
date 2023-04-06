@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://co4xqvmvk4026"]
+[gd_scene load_steps=14 format=3 uid="uid://co4xqvmvk4026"]
 
 [ext_resource type="Texture2D" uid="uid://bqu61m6tx2njt" path="res://src/art/browser_scaled.png" id="1_l472v"]
 [ext_resource type="PackedScene" uid="uid://bhlt8k8851465" path="res://src/scenes/search_grab_zone.tscn" id="2_28v2e"]
@@ -7,12 +7,18 @@
 [ext_resource type="Texture2D" uid="uid://btafu8sdwcfgt" path="res://src/art/slot.png" id="3_kqdij"]
 [ext_resource type="Script" path="res://src/scripts/workspace.gd" id="4_dbk1r"]
 [ext_resource type="Texture2D" uid="uid://dlrcq0b64g4vm" path="res://src/art/hint_box.png" id="5_lj1gy"]
+[ext_resource type="Texture2D" uid="uid://gavwets5dcoa" path="res://src/art/logo_placeholder_small.png" id="8_3mll2"]
 [ext_resource type="Script" path="res://src/scripts/escape_menu.gd" id="8_ahkn5"]
+[ext_resource type="Script" path="res://src/scripts/logo_grab_zone.gd" id="8_sfqlc"]
 
 [sub_resource type="Theme" id="Theme_qn0no"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qvak1"]
 bg_color = Color(0.105882, 0.109804, 0.121569, 1)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0g416"]
+radius = 60.0
+height = 248.0
 
 [node name="Puzzle Scene" type="Node"]
 
@@ -35,6 +41,14 @@ size_flags_vertical = 3
 size_flags_stretch_ratio = 0.85
 texture = ExtResource("1_l472v")
 expand_mode = 1
+
+[node name="URL" type="RichTextLabel" parent="Workspace/VBoxContainer/Browser Texture"]
+layout_mode = 0
+offset_left = 161.0
+offset_top = 38.0
+offset_right = 895.0
+offset_bottom = 63.0
+text = "https://www.searchcurry.cat"
 
 [node name="Return Button" type="Button" parent="Workspace/VBoxContainer/Browser Texture"]
 visible = false
@@ -86,10 +100,33 @@ size_flags_horizontal = 3
 layout_mode = 2
 size_flags_horizontal = 4
 
-[node name="Slot 2" type="TextureRect" parent="Workspace/UI Tray/Vertical Box Container"]
+[node name="Logo" type="TextureRect" parent="Workspace/UI Tray/Vertical Box Container"]
 layout_mode = 2
 size_flags_horizontal = 4
 texture = ExtResource("3_kqdij")
+script = ExtResource("8_sfqlc")
+
+[node name="Small Logo" type="TextureRect" parent="Workspace/UI Tray/Vertical Box Container/Logo"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -46.0
+offset_top = -46.0
+offset_right = 46.0
+offset_bottom = 46.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("8_3mll2")
+
+[node name="Area2D" type="Area2D" parent="Workspace/UI Tray/Vertical Box Container/Logo"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Workspace/UI Tray/Vertical Box Container/Logo/Area2D"]
+position = Vector2(128, 64)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_0g416")
 
 [node name="Slot 3" type="TextureRect" parent="Workspace/UI Tray/Vertical Box Container"]
 layout_mode = 2
@@ -162,4 +199,7 @@ grow_vertical = 2
 text = "Exit Game"
 
 [connection signal="button_down" from="Workspace/VBoxContainer/Browser Texture/Return Button" to="Workspace/VBoxContainer/Browser Texture/Return Button" method="_on_button_down"]
+[connection signal="area_shape_entered" from="Workspace/UI Tray/Vertical Box Container/Logo/Area2D" to="Workspace/UI Tray/Vertical Box Container/Logo" method="_on_area_2d_area_shape_entered"]
+[connection signal="area_shape_exited" from="Workspace/UI Tray/Vertical Box Container/Logo/Area2D" to="Workspace/UI Tray/Vertical Box Container/Logo" method="_on_area_2d_area_shape_exited"]
+[connection signal="input_event" from="Workspace/UI Tray/Vertical Box Container/Logo/Area2D" to="Workspace/UI Tray/Vertical Box Container/Logo" method="_on_area_2d_input_event"]
 [connection signal="button_down" from="Escape Menu/Escape Menu Viewport/Exit Game Button" to="Escape Menu" method="_on_exit_game_button_button_down"]
