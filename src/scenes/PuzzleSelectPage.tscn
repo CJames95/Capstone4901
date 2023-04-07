@@ -1,0 +1,309 @@
+[gd_scene load_steps=14 format=3 uid="uid://cwveo82vcsefs"]
+
+[ext_resource type="Texture2D" uid="uid://cpyowiueotikd" path="res://src/art/Main and Puzzle Select/Puzzle_Select_Elements-1.png" id="2_7daq8"]
+[ext_resource type="Texture2D" uid="uid://dxt1c5f4xfdq8" path="res://src/art/Main and Puzzle Select/Puzzle_1_Icon.png" id="2_pcuke"]
+[ext_resource type="Texture2D" uid="uid://bmpmpfih4801o" path="res://src/art/Main and Puzzle Select/Puzzle_Icon.png" id="3_5n7k7"]
+[ext_resource type="Texture2D" uid="uid://dahbdcbyefobt" path="res://src/art/Main and Puzzle Select/NormalBtn.png" id="4_tk0rd"]
+[ext_resource type="Texture2D" uid="uid://dsj3tmjeggqqy" path="res://src/art/Main and Puzzle Select/ClickedBtn.png" id="5_dego3"]
+[ext_resource type="Texture2D" uid="uid://cqa51ypar7p0b" path="res://src/art/Main and Puzzle Select/SelectedBtn.png" id="6_4yk05"]
+[ext_resource type="Texture2D" uid="uid://bqhijdm27wy6p" path="res://src/art/Main and Puzzle Select/Locked_Puzzle.png" id="6_iwtrs"]
+[ext_resource type="Texture2D" uid="uid://cxak00syb30uw" path="res://src/art/Main and Puzzle Select/BackBtn.png" id="7_vjejt"]
+[ext_resource type="Texture2D" uid="uid://dbavpneyxt6ra" path="res://src/art/Main and Puzzle Select/Puzzle_Info.png" id="8_f6y1a"]
+[ext_resource type="Texture2D" uid="uid://pmouyv1sb5kd" path="res://src/art/Main and Puzzle Select/BackBtnClicked.png" id="8_p3bin"]
+[ext_resource type="Texture2D" uid="uid://bl56rtmwdmo8m" path="res://src/art/Main and Puzzle Select/BackBtnHover.png" id="9_nqbwe"]
+
+[sub_resource type="GDScript" id="GDScript_cfup0"]
+script/source = "extends Control
+
+func _on_back_btn_pressed():
+	get_tree().change_scene_to_file(\"res://src/scenes/MainScreen.tscn\")
+
+func _on_select_puzzle_pressed():
+	get_tree().change_scene_to_file(\"res://src/scenes/Stories and Tutorials/Puzzle1_Story.tscn\")
+"
+
+[sub_resource type="LabelSettings" id="LabelSettings_33g3c"]
+font_size = 24
+outline_size = 1
+outline_color = Color(0, 0, 0, 1)
+
+[node name="PuzzleSelectScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = SubResource("GDScript_cfup0")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_7daq8")
+expand_mode = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 190.0
+offset_top = 138.0
+offset_right = -181.0
+offset_bottom = -77.0
+
+[node name="GridContainer" type="GridContainer" parent="MarginContainer"]
+custom_minimum_size = Vector2(0, 800)
+layout_mode = 2
+size_flags_vertical = 4
+columns = 3
+
+[node name="Puzzle_1" type="BoxContainer" parent="MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+alignment = 1
+vertical = true
+
+[node name="iconLock" type="TextureButton" parent="MarginContainer/GridContainer/Puzzle_1"]
+custom_minimum_size = Vector2(250, 250)
+layout_mode = 2
+size_flags_vertical = 4
+texture_normal = ExtResource("2_pcuke")
+texture_disabled = ExtResource("6_iwtrs")
+ignore_texture_size = true
+stretch_mode = 4
+
+[node name="selectPuzzle" type="TextureButton" parent="MarginContainer/GridContainer/Puzzle_1"]
+custom_minimum_size = Vector2(70, 60)
+layout_mode = 2
+size_flags_vertical = 6
+size_flags_stretch_ratio = 0.0
+texture_normal = ExtResource("4_tk0rd")
+texture_pressed = ExtResource("5_dego3")
+texture_hover = ExtResource("6_4yk05")
+ignore_texture_size = true
+stretch_mode = 4
+
+[node name="puzzle1" type="Label" parent="MarginContainer/GridContainer/Puzzle_1/selectPuzzle"]
+layout_mode = 2
+offset_left = 57.0
+offset_top = 6.0
+offset_right = 191.0
+offset_bottom = 49.0
+text = "Puzzle 1"
+label_settings = SubResource("LabelSettings_33g3c")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Puzzle_2" type="BoxContainer" parent="MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+alignment = 1
+vertical = true
+
+[node name="iconLock" type="TextureButton" parent="MarginContainer/GridContainer/Puzzle_2"]
+custom_minimum_size = Vector2(250, 250)
+layout_mode = 2
+size_flags_vertical = 4
+disabled = true
+texture_normal = ExtResource("3_5n7k7")
+texture_disabled = ExtResource("6_iwtrs")
+ignore_texture_size = true
+stretch_mode = 4
+
+[node name="selectPuzzle" type="TextureButton" parent="MarginContainer/GridContainer/Puzzle_2"]
+custom_minimum_size = Vector2(70, 60)
+layout_mode = 2
+size_flags_vertical = 6
+size_flags_stretch_ratio = 0.0
+texture_normal = ExtResource("4_tk0rd")
+texture_pressed = ExtResource("5_dego3")
+texture_hover = ExtResource("6_4yk05")
+ignore_texture_size = true
+stretch_mode = 4
+
+[node name="puzzle2" type="Label" parent="MarginContainer/GridContainer/Puzzle_2/selectPuzzle"]
+layout_mode = 2
+offset_left = 57.0
+offset_top = 6.0
+offset_right = 191.0
+offset_bottom = 49.0
+text = "Puzzle 2"
+label_settings = SubResource("LabelSettings_33g3c")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Puzzle_3" type="BoxContainer" parent="MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+alignment = 1
+vertical = true
+
+[node name="iconLock" type="TextureButton" parent="MarginContainer/GridContainer/Puzzle_3"]
+custom_minimum_size = Vector2(250, 250)
+layout_mode = 2
+size_flags_vertical = 4
+disabled = true
+texture_normal = ExtResource("3_5n7k7")
+texture_disabled = ExtResource("6_iwtrs")
+ignore_texture_size = true
+stretch_mode = 4
+
+[node name="selectPuzzle" type="TextureButton" parent="MarginContainer/GridContainer/Puzzle_3"]
+custom_minimum_size = Vector2(70, 60)
+layout_mode = 2
+size_flags_vertical = 6
+size_flags_stretch_ratio = 0.0
+texture_normal = ExtResource("4_tk0rd")
+texture_pressed = ExtResource("5_dego3")
+texture_hover = ExtResource("6_4yk05")
+ignore_texture_size = true
+stretch_mode = 4
+
+[node name="puzzle3" type="Label" parent="MarginContainer/GridContainer/Puzzle_3/selectPuzzle"]
+layout_mode = 2
+offset_left = 57.0
+offset_top = 6.0
+offset_right = 191.0
+offset_bottom = 49.0
+text = "Puzzle 3"
+label_settings = SubResource("LabelSettings_33g3c")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Puzzle_4" type="BoxContainer" parent="MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+alignment = 1
+vertical = true
+
+[node name="iconLock" type="TextureButton" parent="MarginContainer/GridContainer/Puzzle_4"]
+custom_minimum_size = Vector2(250, 250)
+layout_mode = 2
+size_flags_vertical = 4
+disabled = true
+texture_normal = ExtResource("3_5n7k7")
+texture_disabled = ExtResource("6_iwtrs")
+ignore_texture_size = true
+stretch_mode = 4
+
+[node name="selectPuzzle" type="TextureButton" parent="MarginContainer/GridContainer/Puzzle_4"]
+custom_minimum_size = Vector2(70, 60)
+layout_mode = 2
+size_flags_vertical = 6
+size_flags_stretch_ratio = 0.0
+texture_normal = ExtResource("4_tk0rd")
+texture_pressed = ExtResource("5_dego3")
+texture_hover = ExtResource("6_4yk05")
+ignore_texture_size = true
+stretch_mode = 4
+
+[node name="puzzle4" type="Label" parent="MarginContainer/GridContainer/Puzzle_4/selectPuzzle"]
+layout_mode = 2
+offset_left = 57.0
+offset_top = 6.0
+offset_right = 191.0
+offset_bottom = 49.0
+text = "Puzzle 4"
+label_settings = SubResource("LabelSettings_33g3c")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Puzzle_5" type="BoxContainer" parent="MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+alignment = 1
+vertical = true
+
+[node name="iconLock" type="TextureButton" parent="MarginContainer/GridContainer/Puzzle_5"]
+custom_minimum_size = Vector2(250, 250)
+layout_mode = 2
+size_flags_vertical = 4
+disabled = true
+texture_normal = ExtResource("3_5n7k7")
+texture_disabled = ExtResource("6_iwtrs")
+ignore_texture_size = true
+stretch_mode = 4
+
+[node name="selectPuzzle" type="TextureButton" parent="MarginContainer/GridContainer/Puzzle_5"]
+custom_minimum_size = Vector2(70, 60)
+layout_mode = 2
+size_flags_vertical = 6
+size_flags_stretch_ratio = 0.0
+texture_normal = ExtResource("4_tk0rd")
+texture_pressed = ExtResource("5_dego3")
+texture_hover = ExtResource("6_4yk05")
+ignore_texture_size = true
+stretch_mode = 4
+
+[node name="puzzle5" type="Label" parent="MarginContainer/GridContainer/Puzzle_5/selectPuzzle"]
+layout_mode = 2
+offset_left = 57.0
+offset_top = 6.0
+offset_right = 191.0
+offset_bottom = 49.0
+text = "Puzzle 5"
+label_settings = SubResource("LabelSettings_33g3c")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Puzzle_6" type="BoxContainer" parent="MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+alignment = 1
+vertical = true
+
+[node name="iconLock" type="TextureButton" parent="MarginContainer/GridContainer/Puzzle_6"]
+custom_minimum_size = Vector2(250, 250)
+layout_mode = 2
+size_flags_vertical = 4
+texture_normal = ExtResource("8_f6y1a")
+ignore_texture_size = true
+stretch_mode = 4
+
+[node name="selectPuzzle" type="TextureButton" parent="MarginContainer/GridContainer/Puzzle_6"]
+custom_minimum_size = Vector2(70, 60)
+layout_mode = 2
+size_flags_vertical = 6
+size_flags_stretch_ratio = 0.0
+texture_normal = ExtResource("4_tk0rd")
+texture_pressed = ExtResource("5_dego3")
+texture_hover = ExtResource("6_4yk05")
+ignore_texture_size = true
+stretch_mode = 4
+
+[node name="puzzleInfo" type="Label" parent="MarginContainer/GridContainer/Puzzle_6/selectPuzzle"]
+layout_mode = 2
+offset_left = 57.0
+offset_top = 6.0
+offset_right = 191.0
+offset_bottom = 49.0
+text = "Puzzle Info"
+label_settings = SubResource("LabelSettings_33g3c")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BackBtn" type="TextureButton" parent="."]
+layout_mode = 1
+offset_left = 40.0
+offset_top = 40.0
+offset_right = 370.0
+offset_bottom = 295.0
+scale = Vector2(0.5, 0.5)
+texture_normal = ExtResource("7_vjejt")
+texture_pressed = ExtResource("8_p3bin")
+texture_hover = ExtResource("9_nqbwe")
+stretch_mode = 4
+
+[connection signal="pressed" from="MarginContainer/GridContainer/Puzzle_1/selectPuzzle" to="." method="_on_select_puzzle_pressed"]
+[connection signal="pressed" from="BackBtn" to="." method="_on_back_btn_pressed"]

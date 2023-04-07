@@ -1,0 +1,248 @@
+[gd_scene load_steps=10 format=3 uid="uid://cvog62salctpe"]
+
+[ext_resource type="Texture2D" uid="uid://bilxtde3tubqc" path="res://src/art/Main and Puzzle Select/MainScreen_1.png" id="1_ah8p8"]
+[ext_resource type="Script" path="res://src/scripts/Main and Puzzle Select/MainScreen.gd" id="1_g3n0t"]
+[ext_resource type="Texture2D" uid="uid://dahbdcbyefobt" path="res://src/art/Main and Puzzle Select/NormalBtn.png" id="2_40k38"]
+[ext_resource type="Texture2D" uid="uid://dsj3tmjeggqqy" path="res://src/art/Main and Puzzle Select/ClickedBtn.png" id="3_4ryse"]
+[ext_resource type="Texture2D" uid="uid://cqa51ypar7p0b" path="res://src/art/Main and Puzzle Select/SelectedBtn.png" id="4_1gulr"]
+[ext_resource type="Script" path="res://src/scripts/Main and Puzzle Select/ExitMenu.gd" id="6_ijocp"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_h8jt5"]
+font_size = 50
+
+[sub_resource type="LabelSettings" id="LabelSettings_its1k"]
+font_size = 35
+
+[sub_resource type="LabelSettings" id="LabelSettings_h3mv0"]
+font_size = 30
+
+[node name="MainScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_g3n0t")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_ah8p8")
+expand_mode = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.375
+anchor_top = 0.481
+anchor_right = 0.793
+anchor_bottom = 0.925
+offset_left = -6.10352e-05
+offset_top = -0.480042
+offset_right = 0.439941
+offset_bottom = -6.10352e-05
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+size_flags_stretch_ratio = 0.0
+alignment = 1
+
+[node name="PlayBtn" type="TextureButton" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(422, 128)
+layout_mode = 2
+texture_normal = ExtResource("2_40k38")
+texture_pressed = ExtResource("3_4ryse")
+texture_hover = ExtResource("4_1gulr")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/PlayBtn"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.265
+anchor_right = 1.0
+anchor_bottom = 0.883
+offset_left = 0.339981
+offset_bottom = -0.0480042
+grow_horizontal = 2
+grow_vertical = 2
+text = "Play"
+label_settings = SubResource("LabelSettings_h8jt5")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SettingsBtn" type="TextureButton" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(422, 128)
+layout_mode = 2
+texture_normal = ExtResource("2_40k38")
+texture_pressed = ExtResource("3_4ryse")
+texture_hover = ExtResource("4_1gulr")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/SettingsBtn"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.265
+anchor_right = 1.0
+anchor_bottom = 0.883
+offset_left = 0.339981
+offset_bottom = -0.0480042
+grow_horizontal = 2
+grow_vertical = 2
+text = "Settings"
+label_settings = SubResource("LabelSettings_h8jt5")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ExitBtn" type="TextureButton" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(422, 128)
+layout_mode = 2
+texture_normal = ExtResource("2_40k38")
+texture_pressed = ExtResource("3_4ryse")
+texture_hover = ExtResource("4_1gulr")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/ExitBtn"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.265
+anchor_right = 1.0
+anchor_bottom = 0.883
+offset_left = 0.339981
+offset_bottom = -0.0480042
+grow_horizontal = 2
+grow_vertical = 2
+text = "Exit"
+label_settings = SubResource("LabelSettings_h8jt5")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ExitMenu" type="BoxContainer" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+script = ExtResource("6_ijocp")
+
+[node name="Background" type="ColorRect" parent="ExitMenu"]
+layout_mode = 2
+size_flags_horizontal = 3
+color = Color(0.423529, 0.423529, 0.423529, 0.427451)
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="ExitMenu/Background"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -326.0
+offset_top = -181.0
+offset_right = 326.0
+offset_bottom = 191.0
+grow_horizontal = 2
+grow_vertical = 2
+stretch = true
+
+[node name="SubViewport" type="SubViewport" parent="ExitMenu/Background/SubViewportContainer"]
+handle_input_locally = false
+size = Vector2i(652, 372)
+render_target_update_mode = 0
+
+[node name="Label" type="Label" parent="ExitMenu/Background/SubViewportContainer/SubViewport"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -286.5
+offset_top = -86.0
+offset_right = 286.5
+offset_bottom = -34.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Do you want to quit Cats in Crocs?"
+label_settings = SubResource("LabelSettings_its1k")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="GridContainer" type="GridContainer" parent="ExitMenu/Background/SubViewportContainer/SubViewport"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -252.0
+offset_top = -172.0
+offset_right = 252.0
+offset_bottom = -72.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 8
+size_flags_vertical = 4
+size_flags_stretch_ratio = 0.0
+columns = 2
+
+[node name="KeepPlayingBtn" type="Button" parent="ExitMenu/Background/SubViewportContainer/SubViewport/GridContainer"]
+custom_minimum_size = Vector2(250, 100)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="ExitMenu/Background/SubViewportContainer/SubViewport/GridContainer/KeepPlayingBtn"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -73.5
+offset_top = -22.5
+offset_right = 73.5
+offset_bottom = 22.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Keep playing"
+label_settings = SubResource("LabelSettings_h3mv0")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ConfirmExitBtn" type="Button" parent="ExitMenu/Background/SubViewportContainer/SubViewport/GridContainer"]
+custom_minimum_size = Vector2(250, 100)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="ExitMenu/Background/SubViewportContainer/SubViewport/GridContainer/ConfirmExitBtn"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -73.5
+offset_top = -22.5
+offset_right = 73.5
+offset_bottom = 22.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Exit Game"
+label_settings = SubResource("LabelSettings_h3mv0")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/PlayBtn" to="." method="_on_play_btn_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/ExitBtn" to="ExitMenu" method="_on_exit_btn_pressed"]
+[connection signal="pressed" from="ExitMenu/Background/SubViewportContainer/SubViewport/GridContainer/KeepPlayingBtn" to="ExitMenu" method="_on_keep_playing_btn_pressed"]
+[connection signal="pressed" from="ExitMenu/Background/SubViewportContainer/SubViewport/GridContainer/ConfirmExitBtn" to="ExitMenu" method="_on_button_pressed"]
