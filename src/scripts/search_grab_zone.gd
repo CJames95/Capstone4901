@@ -36,7 +36,12 @@ func _on_area_2d_input_event(viewport, event, shape_idx):
 			root_scene.remove_child(searchbar_instance)
 			searchbar_icon_node.show()
 			searchbar_instance.delete_instance()
-
+	if Input.is_action_just_pressed("R") or Input.is_action_pressed("R"):
+		if made_instance == true:
+			made_instance = false
+			root_scene.remove_child(searchbar_instance)
+			searchbar_icon_node.show()
+			searchbar_instance.delete_instance()
 # Called if an object enters the area of Area2D.
 # If an object enters, switch area_entered to true.
 func _on_area_2d_area_shape_entered(area_rid, area, area_shape_index, local_shape_index):
