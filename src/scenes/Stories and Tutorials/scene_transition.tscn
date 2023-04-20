@@ -2,6 +2,9 @@
 
 [ext_resource type="Script" path="res://SceneTransition.gd" id="1_xk7lj"]
 
+[sub_resource type="Animation" id="Animation_sl1ts"]
+resource_name = "RESET"
+
 [sub_resource type="Animation" id="Animation_v0ild"]
 resource_name = "dissolve"
 tracks/0/type = "value"
@@ -16,9 +19,6 @@ tracks/0/keys = {
 "update": 0,
 "values": [Color(0.203922, 0.203922, 0.203922, 1), Color(0.219608, 0.219608, 0.219608, 0)]
 }
-
-[sub_resource type="Animation" id="Animation_sl1ts"]
-resource_name = "RESET"
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_8gkb6"]
 _data = {

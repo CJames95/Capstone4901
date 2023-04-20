@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://oxgnv3r3eber"]
 
-[ext_resource type="Texture2D" uid="uid://cpyowiueotikd" path="res://Art Resources/Puzzle_Select_Elements-1.png" id="1_46dyl"]
+[ext_resource type="Texture2D" uid="uid://cpyowiueotikd" path="res://src/art/Main and Puzzle Select/Puzzle_Select_Elements-1.png" id="1_46dyl"]
 
 [node name="Tutorial" type="Control"]
 layout_mode = 3

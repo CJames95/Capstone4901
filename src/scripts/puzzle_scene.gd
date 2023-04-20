@@ -50,6 +50,10 @@ func _on_yes_button_down():
 	print("Visibility of System Status: ", visiblity_of_system_stat, "/1")
 	print("Help and Documentation: ", help_and_doc, "/1")
 	$"End Puzzle Confirmation".hide()
+	if ((has_searchbar + has_logo + has_help) >= 2) :
+		get_tree().change_scene_to_file("res://src/scenes/pass_puzzle.tscn") 
+	else :
+		get_tree().change_scene_to_file("res://src/scenes/fail_puzzle.tscn")
 	#get_tree().quit()
 
 # Called when the user selects the no button on the confirmation

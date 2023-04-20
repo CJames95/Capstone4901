@@ -1,0 +1,85 @@
+[gd_scene load_steps=7 format=3 uid="uid://d2b8hek6gotlo"]
+
+[ext_resource type="Script" path="res://src/scripts/pass_puzzle.gd" id="1_rrpoj"]
+[ext_resource type="Texture2D" uid="uid://cpyowiueotikd" path="res://src/art/Main and Puzzle Select/Puzzle_Select_Elements-1.png" id="2_7rlrk"]
+[ext_resource type="Texture2D" uid="uid://br821pfahyth4" path="res://src/art/pass.PNG" id="3_jlefc"]
+[ext_resource type="Texture2D" uid="uid://bmwttllwlaaqx" path="res://src/art/next.PNG" id="4_2gdp5"]
+[ext_resource type="Texture2D" uid="uid://b4qi1yura1o6y" path="res://src/art/retry.PNG" id="4_xxvlf"]
+[ext_resource type="Texture2D" uid="uid://cn02y4duck51j" path="res://src/art/exit.PNG" id="5_2hu1g"]
+
+[node name="Pass Puzzle" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_rrpoj")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 0
+offset_top = 2.0
+offset_right = 1933.0
+offset_bottom = 1085.0
+texture = ExtResource("2_7rlrk")
+expand_mode = 3
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 593.0
+offset_top = 156.0
+offset_right = 1329.0
+offset_bottom = 567.0
+texture = ExtResource("3_jlefc")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 78.0
+offset_top = 675.0
+offset_right = 658.0
+offset_bottom = 415.0
+scale = Vector2(0.7, 0.7)
+
+[node name="GridContainer" type="GridContainer" parent="MarginContainer"]
+custom_minimum_size = Vector2(1000, 800)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_stretch_ratio = 2.0
+columns = 3
+
+[node name="Next" type="BoxContainer" parent="MarginContainer/GridContainer"]
+custom_minimum_size = Vector2(800, 0)
+layout_mode = 2
+
+[node name="Next" type="TextureButton" parent="MarginContainer/GridContainer/Next"]
+layout_mode = 2
+texture_normal = ExtResource("4_2gdp5")
+texture_pressed = ExtResource("4_2gdp5")
+texture_hover = ExtResource("4_2gdp5")
+
+[node name="Retry" type="BoxContainer" parent="MarginContainer/GridContainer"]
+layout_mode = 2
+
+[node name="Retry" type="TextureButton" parent="MarginContainer/GridContainer/Retry"]
+layout_mode = 2
+texture_normal = ExtResource("4_xxvlf")
+texture_pressed = ExtResource("4_xxvlf")
+texture_hover = ExtResource("4_xxvlf")
+
+[node name="Exit" type="BoxContainer" parent="MarginContainer/GridContainer"]
+custom_minimum_size = Vector2(800, 0)
+layout_mode = 2
+alignment = 2
+
+[node name="Exit" type="TextureButton" parent="MarginContainer/GridContainer/Exit"]
+layout_mode = 2
+texture_normal = ExtResource("5_2hu1g")
+texture_pressed = ExtResource("5_2hu1g")
+texture_hover = ExtResource("5_2hu1g")
+
+[connection signal="pressed" from="MarginContainer/GridContainer/Next/Next" to="." method="_on_next_btn_pressed"]
+[connection signal="pressed" from="MarginContainer/GridContainer/Retry/Retry" to="." method="_on_retry_btn_pressed"]
+[connection signal="pressed" from="MarginContainer/GridContainer/Exit/Exit" to="." method="_on_exit_btn_pressed"]
