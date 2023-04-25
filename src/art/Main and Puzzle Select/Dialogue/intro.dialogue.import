@@ -1,0 +1,14 @@
+[remap]
+
+importer="dialogue_manager_compiler_8"
+type="Resource"
+uid="uid://baht3haovgrlw"
+path="res://.godot/imported/intro.dialogue-f7f74684646cfd5370371465a6c2fe64.tres"
+
+[deps]
+
+source_file="res://Scripts/JSON/intro.dialogue"
+dest_files=["res://.godot/imported/intro.dialogue-f7f74684646cfd5370371465a6c2fe64.tres"]
+
+[params]
+

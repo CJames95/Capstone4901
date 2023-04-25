@@ -1,17 +1,20 @@
-[gd_scene load_steps=10 format=3 uid="uid://cvog62salctpe"]
+[gd_scene load_steps=15 format=3 uid="uid://c5c6bablhqw5y"]
 
-[ext_resource type="Texture2D" uid="uid://bilxtde3tubqc" path="res://src/art/Main and Puzzle Select/MainScreen_1.png" id="1_ah8p8"]
+[ext_resource type="Texture2D" uid="uid://bilxtde3tubqc" path="res://src/art/Main and Puzzle Select/Main Screen/MainScreen_1.png" id="1_ah8p8"]
 [ext_resource type="Script" path="res://src/scripts/Main and Puzzle Select/MainScreen.gd" id="1_g3n0t"]
-[ext_resource type="Texture2D" uid="uid://dahbdcbyefobt" path="res://src/art/Main and Puzzle Select/NormalBtn.png" id="2_40k38"]
-[ext_resource type="Texture2D" uid="uid://dsj3tmjeggqqy" path="res://src/art/Main and Puzzle Select/ClickedBtn.png" id="3_4ryse"]
-[ext_resource type="Texture2D" uid="uid://cqa51ypar7p0b" path="res://src/art/Main and Puzzle Select/SelectedBtn.png" id="4_1gulr"]
+[ext_resource type="Texture2D" uid="uid://donnpdjd2vb8s" path="res://src/art/Main and Puzzle Select/Main Screen/Main_PlayBtn_Normal.png" id="3_qxjfi"]
+[ext_resource type="Texture2D" uid="uid://dgsxbim783u2m" path="res://src/art/Main and Puzzle Select/Main Screen/Main_PlayBtn_Clicked.png" id="4_1li24"]
+[ext_resource type="Texture2D" uid="uid://c8mcq8ebcvc4i" path="res://src/art/Main and Puzzle Select/Main Screen/Main_PlayBtn_Selected.png" id="5_sumpc"]
+[ext_resource type="Texture2D" uid="uid://bkyynge0c8veo" path="res://src/art/Main and Puzzle Select/Main Screen/Main_InfoBtn_Normal.png" id="6_c1py7"]
 [ext_resource type="Script" path="res://src/scripts/Main and Puzzle Select/ExitMenu.gd" id="6_ijocp"]
+[ext_resource type="Texture2D" uid="uid://bu7yst1rvmbfs" path="res://src/art/Main and Puzzle Select/Main Screen/Main_InfoBtn_Clicked.png" id="7_6p4ki"]
+[ext_resource type="Texture2D" uid="uid://dds4myf4462or" path="res://src/art/Main and Puzzle Select/Main Screen/Main_InfoBtn_Selected.png" id="8_hq5tf"]
+[ext_resource type="Texture2D" uid="uid://b4im2m7067wx" path="res://src/art/Main and Puzzle Select/Main Screen/Main_ExitBtn_Normal.png" id="9_uphtt"]
+[ext_resource type="Texture2D" uid="uid://virmqqh4at2m" path="res://src/art/Main and Puzzle Select/Main Screen/Main_ExitBtn_Clicked.png" id="10_cb5hx"]
+[ext_resource type="Texture2D" uid="uid://2rh0uwsckt8j" path="res://src/art/Main and Puzzle Select/Main Screen/Main_ExitBtn_Selected.png" id="11_qql37"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_h8jt5"]
 font_size = 50
-
-[sub_resource type="LabelSettings" id="LabelSettings_its1k"]
-font_size = 35
 
 [sub_resource type="LabelSettings" id="LabelSettings_h3mv0"]
 font_size = 30
@@ -59,13 +62,14 @@ alignment = 1
 [node name="PlayBtn" type="TextureButton" parent="MarginContainer/VBoxContainer"]
 custom_minimum_size = Vector2(422, 128)
 layout_mode = 2
-texture_normal = ExtResource("2_40k38")
-texture_pressed = ExtResource("3_4ryse")
-texture_hover = ExtResource("4_1gulr")
+texture_normal = ExtResource("3_qxjfi")
+texture_pressed = ExtResource("4_1li24")
+texture_hover = ExtResource("5_sumpc")
 ignore_texture_size = true
 stretch_mode = 5
 
 [node name="Label" type="Label" parent="MarginContainer/VBoxContainer/PlayBtn"]
+visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.265
@@ -83,13 +87,14 @@ vertical_alignment = 1
 [node name="SettingsBtn" type="TextureButton" parent="MarginContainer/VBoxContainer"]
 custom_minimum_size = Vector2(422, 128)
 layout_mode = 2
-texture_normal = ExtResource("2_40k38")
-texture_pressed = ExtResource("3_4ryse")
-texture_hover = ExtResource("4_1gulr")
+texture_normal = ExtResource("6_c1py7")
+texture_pressed = ExtResource("7_6p4ki")
+texture_hover = ExtResource("8_hq5tf")
 ignore_texture_size = true
 stretch_mode = 5
 
 [node name="Label" type="Label" parent="MarginContainer/VBoxContainer/SettingsBtn"]
+visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.265
@@ -107,13 +112,14 @@ vertical_alignment = 1
 [node name="ExitBtn" type="TextureButton" parent="MarginContainer/VBoxContainer"]
 custom_minimum_size = Vector2(422, 128)
 layout_mode = 2
-texture_normal = ExtResource("2_40k38")
-texture_pressed = ExtResource("3_4ryse")
-texture_hover = ExtResource("4_1gulr")
+texture_normal = ExtResource("9_uphtt")
+texture_pressed = ExtResource("10_cb5hx")
+texture_hover = ExtResource("11_qql37")
 ignore_texture_size = true
 stretch_mode = 5
 
 [node name="Label" type="Label" parent="MarginContainer/VBoxContainer/ExitBtn"]
+visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.265
@@ -164,67 +170,21 @@ handle_input_locally = false
 size = Vector2i(652, 372)
 render_target_update_mode = 0
 
-[node name="Label" type="Label" parent="ExitMenu/Background/SubViewportContainer/SubViewport"]
+[node name="Button" type="Button" parent="ExitMenu/Background/SubViewportContainer/SubViewport"]
+custom_minimum_size = Vector2(300, 100)
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -286.5
-offset_top = -86.0
-offset_right = 286.5
-offset_bottom = -34.0
+offset_left = -43.5
+offset_top = -15.5
+offset_right = 43.5
+offset_bottom = 15.5
 grow_horizontal = 2
 grow_vertical = 2
-text = "Do you want to quit Cats in Crocs?"
-label_settings = SubResource("LabelSettings_its1k")
-horizontal_alignment = 1
-vertical_alignment = 1
 
-[node name="GridContainer" type="GridContainer" parent="ExitMenu/Background/SubViewportContainer/SubViewport"]
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -252.0
-offset_top = -172.0
-offset_right = 252.0
-offset_bottom = -72.0
-grow_horizontal = 2
-grow_vertical = 0
-size_flags_horizontal = 8
-size_flags_vertical = 4
-size_flags_stretch_ratio = 0.0
-columns = 2
-
-[node name="KeepPlayingBtn" type="Button" parent="ExitMenu/Background/SubViewportContainer/SubViewport/GridContainer"]
-custom_minimum_size = Vector2(250, 100)
-layout_mode = 2
-
-[node name="Label" type="Label" parent="ExitMenu/Background/SubViewportContainer/SubViewport/GridContainer/KeepPlayingBtn"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -73.5
-offset_top = -22.5
-offset_right = 73.5
-offset_bottom = 22.5
-grow_horizontal = 2
-grow_vertical = 2
-text = "Keep playing"
-label_settings = SubResource("LabelSettings_h3mv0")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="ConfirmExitBtn" type="Button" parent="ExitMenu/Background/SubViewportContainer/SubViewport/GridContainer"]
-custom_minimum_size = Vector2(250, 100)
-layout_mode = 2
-
-[node name="Label" type="Label" parent="ExitMenu/Background/SubViewportContainer/SubViewport/GridContainer/ConfirmExitBtn"]
+[node name="Label" type="Label" parent="ExitMenu/Background/SubViewportContainer/SubViewport/Button"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -244,5 +204,4 @@ vertical_alignment = 1
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/PlayBtn" to="." method="_on_play_btn_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/ExitBtn" to="ExitMenu" method="_on_exit_btn_pressed"]
-[connection signal="pressed" from="ExitMenu/Background/SubViewportContainer/SubViewport/GridContainer/KeepPlayingBtn" to="ExitMenu" method="_on_keep_playing_btn_pressed"]
-[connection signal="pressed" from="ExitMenu/Background/SubViewportContainer/SubViewport/GridContainer/ConfirmExitBtn" to="ExitMenu" method="_on_button_pressed"]
+[connection signal="pressed" from="ExitMenu/Background/SubViewportContainer/SubViewport/Button" to="ExitMenu" method="_on_button_pressed"]

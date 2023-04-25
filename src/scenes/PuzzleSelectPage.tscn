@@ -1,16 +1,29 @@
-[gd_scene load_steps=14 format=3 uid="uid://cwveo82vcsefs"]
+[gd_scene load_steps=27 format=3 uid="uid://cwveo82vcsefs"]
 
-[ext_resource type="Texture2D" uid="uid://cpyowiueotikd" path="res://src/art/Main and Puzzle Select/Puzzle_Select_Elements-1.png" id="2_7daq8"]
-[ext_resource type="Texture2D" uid="uid://dxt1c5f4xfdq8" path="res://src/art/Main and Puzzle Select/Puzzle_1_Icon.png" id="2_pcuke"]
-[ext_resource type="Texture2D" uid="uid://bmpmpfih4801o" path="res://src/art/Main and Puzzle Select/Puzzle_Icon.png" id="3_5n7k7"]
-[ext_resource type="Texture2D" uid="uid://dahbdcbyefobt" path="res://src/art/Main and Puzzle Select/NormalBtn.png" id="4_tk0rd"]
-[ext_resource type="Texture2D" uid="uid://dsj3tmjeggqqy" path="res://src/art/Main and Puzzle Select/ClickedBtn.png" id="5_dego3"]
-[ext_resource type="Texture2D" uid="uid://cqa51ypar7p0b" path="res://src/art/Main and Puzzle Select/SelectedBtn.png" id="6_4yk05"]
-[ext_resource type="Texture2D" uid="uid://bqhijdm27wy6p" path="res://src/art/Main and Puzzle Select/Locked_Puzzle.png" id="6_iwtrs"]
-[ext_resource type="Texture2D" uid="uid://cxak00syb30uw" path="res://src/art/Main and Puzzle Select/BackBtn.png" id="7_vjejt"]
-[ext_resource type="Texture2D" uid="uid://dbavpneyxt6ra" path="res://src/art/Main and Puzzle Select/Puzzle_Info.png" id="8_f6y1a"]
-[ext_resource type="Texture2D" uid="uid://pmouyv1sb5kd" path="res://src/art/Main and Puzzle Select/BackBtnClicked.png" id="8_p3bin"]
-[ext_resource type="Texture2D" uid="uid://bl56rtmwdmo8m" path="res://src/art/Main and Puzzle Select/BackBtnHover.png" id="9_nqbwe"]
+[ext_resource type="Texture2D" uid="uid://cpyowiueotikd" path="res://src/art/Main and Puzzle Select/Puzzle Select/Puzzle_Select_Elements-1.png" id="2_7daq8"]
+[ext_resource type="Texture2D" uid="uid://dxt1c5f4xfdq8" path="res://src/art/Main and Puzzle Select/Puzzle Select/Puzzle_1_Icon.png" id="2_pcuke"]
+[ext_resource type="Texture2D" uid="uid://dc41hblv1gkpu" path="res://src/art/Main and Puzzle Select/Puzzle Select/Lock_Btn.png" id="3_fmtt3"]
+[ext_resource type="Texture2D" uid="uid://cc7epw1lcyx4k" path="res://src/art/Main and Puzzle Select/Puzzle Select/Main_P1Btn_Normal.png" id="4_80owl"]
+[ext_resource type="Texture2D" uid="uid://cmf7kyc1lx6wa" path="res://src/art/Main and Puzzle Select/Puzzle Select/Main_P1Btn_Clicked.png" id="5_6q6gq"]
+[ext_resource type="Texture2D" uid="uid://84nh00fhno13" path="res://src/art/Main and Puzzle Select/Puzzle Select/Main_P1Btn_Selected.png" id="6_3612n"]
+[ext_resource type="Texture2D" uid="uid://cdibkqp75wmk3" path="res://src/art/Main and Puzzle Select/Puzzle Select/PuzzleInfo-1.png" id="7_sg514"]
+[ext_resource type="Texture2D" uid="uid://dxhbgobyia8cn" path="res://src/art/Main and Puzzle Select/Puzzle Select/Main_P2Btn_Normal.png" id="8_6ksjx"]
+[ext_resource type="Texture2D" uid="uid://b5ywwb43jgsrv" path="res://src/art/Main and Puzzle Select/Puzzle Select/Main_P3Btn_Clicked.png" id="9_xglro"]
+[ext_resource type="Texture2D" uid="uid://b3phmkg6w16u6" path="res://src/art/Main and Puzzle Select/Puzzle Select/BackBtn_Normal.png" id="9_ymct5"]
+[ext_resource type="Texture2D" uid="uid://ssuvefvidtjl" path="res://src/art/Main and Puzzle Select/Puzzle Select/Main_P2Btn_Clicked.png" id="9_yswer"]
+[ext_resource type="Texture2D" uid="uid://cqoatq2bqexl2" path="res://src/art/Main and Puzzle Select/Puzzle Select/BackBtn_Clicked.png" id="10_ch2of"]
+[ext_resource type="Texture2D" uid="uid://covne8y62n50s" path="res://src/art/Main and Puzzle Select/Puzzle Select/Main_P2Btn_Selected.png" id="10_uci4r"]
+[ext_resource type="Texture2D" uid="uid://befws0jbo3gh8" path="res://src/art/Main and Puzzle Select/Puzzle Select/BackBtn_Selected.png" id="11_e1egb"]
+[ext_resource type="Texture2D" uid="uid://dp6eedr5qc48u" path="res://src/art/Main and Puzzle Select/Puzzle Select/Main_P3Btn_Normal.png" id="11_kob1i"]
+[ext_resource type="Texture2D" uid="uid://dwmrwynfxhw18" path="res://src/art/Main and Puzzle Select/Puzzle Select/Main_P3Btn_Selected.png" id="12_1nb3b"]
+[ext_resource type="Texture2D" uid="uid://d35bd6wawuqmg" path="res://src/art/Main and Puzzle Select/Puzzle Select/Main_P4Btn_Normal.png" id="13_gy4jf"]
+[ext_resource type="Texture2D" uid="uid://b8yl4ynf8lgwf" path="res://src/art/Main and Puzzle Select/Puzzle Select/Main_P4Btn_Clicked.png" id="14_mdgwo"]
+[ext_resource type="Texture2D" uid="uid://l8f7vbacdhqu" path="res://src/art/Main and Puzzle Select/Puzzle Select/Main_P4Btn_Selected.png" id="15_3oiie"]
+[ext_resource type="Texture2D" uid="uid://c865qk8nyyaea" path="res://src/art/Main and Puzzle Select/Puzzle Select/Main_P5Btn_Normal.png" id="16_e00mh"]
+[ext_resource type="Texture2D" uid="uid://2lx3t4ke5bbx" path="res://src/art/Main and Puzzle Select/Puzzle Select/Main_P5Btn_Clicked.png" id="17_wa1uj"]
+[ext_resource type="Texture2D" uid="uid://b6b51uvy72isl" path="res://src/art/Main and Puzzle Select/Puzzle Select/Main_P5Btn_Selected.png" id="18_k7qxo"]
+[ext_resource type="Texture2D" uid="uid://c0s4jaryqfmc0" path="res://src/art/Main and Puzzle Select/Puzzle Select/PuzzleInfo.png" id="19_gh13s"]
+[ext_resource type="Texture2D" uid="uid://351yn06j2yge" path="res://src/art/Main and Puzzle Select/Puzzle Select/Puzzle_InfoBtn_Normal.png" id="20_k2vvm"]
 
 [sub_resource type="GDScript" id="GDScript_cfup0"]
 script/source = "extends Control
@@ -19,7 +32,7 @@ func _on_back_btn_pressed():
 	get_tree().change_scene_to_file(\"res://src/scenes/MainScreen.tscn\")
 
 func _on_select_puzzle_pressed():
-	get_tree().change_scene_to_file(\"res://src/scenes/Stories and Tutorials/Puzzle1_Story.tscn\")
+	get_tree().change_scene_to_file(\"res://src/scenes/Puzzle 1/Puzzle1_Story.tscn\")
 "
 
 [sub_resource type="LabelSettings" id="LabelSettings_33g3c"]
@@ -74,7 +87,7 @@ custom_minimum_size = Vector2(250, 250)
 layout_mode = 2
 size_flags_vertical = 4
 texture_normal = ExtResource("2_pcuke")
-texture_disabled = ExtResource("6_iwtrs")
+texture_disabled = ExtResource("3_fmtt3")
 ignore_texture_size = true
 stretch_mode = 4
 
@@ -83,13 +96,14 @@ custom_minimum_size = Vector2(70, 60)
 layout_mode = 2
 size_flags_vertical = 6
 size_flags_stretch_ratio = 0.0
-texture_normal = ExtResource("4_tk0rd")
-texture_pressed = ExtResource("5_dego3")
-texture_hover = ExtResource("6_4yk05")
+texture_normal = ExtResource("4_80owl")
+texture_pressed = ExtResource("5_6q6gq")
+texture_hover = ExtResource("6_3612n")
 ignore_texture_size = true
 stretch_mode = 4
 
 [node name="puzzle1" type="Label" parent="MarginContainer/GridContainer/Puzzle_1/selectPuzzle"]
+visible = false
 layout_mode = 2
 offset_left = 57.0
 offset_top = 6.0
@@ -112,8 +126,8 @@ custom_minimum_size = Vector2(250, 250)
 layout_mode = 2
 size_flags_vertical = 4
 disabled = true
-texture_normal = ExtResource("3_5n7k7")
-texture_disabled = ExtResource("6_iwtrs")
+texture_normal = ExtResource("7_sg514")
+texture_disabled = ExtResource("3_fmtt3")
 ignore_texture_size = true
 stretch_mode = 4
 
@@ -122,13 +136,14 @@ custom_minimum_size = Vector2(70, 60)
 layout_mode = 2
 size_flags_vertical = 6
 size_flags_stretch_ratio = 0.0
-texture_normal = ExtResource("4_tk0rd")
-texture_pressed = ExtResource("5_dego3")
-texture_hover = ExtResource("6_4yk05")
+texture_normal = ExtResource("8_6ksjx")
+texture_pressed = ExtResource("9_yswer")
+texture_hover = ExtResource("10_uci4r")
 ignore_texture_size = true
 stretch_mode = 4
 
 [node name="puzzle2" type="Label" parent="MarginContainer/GridContainer/Puzzle_2/selectPuzzle"]
+visible = false
 layout_mode = 2
 offset_left = 57.0
 offset_top = 6.0
@@ -151,8 +166,8 @@ custom_minimum_size = Vector2(250, 250)
 layout_mode = 2
 size_flags_vertical = 4
 disabled = true
-texture_normal = ExtResource("3_5n7k7")
-texture_disabled = ExtResource("6_iwtrs")
+texture_normal = ExtResource("7_sg514")
+texture_disabled = ExtResource("3_fmtt3")
 ignore_texture_size = true
 stretch_mode = 4
 
@@ -161,13 +176,14 @@ custom_minimum_size = Vector2(70, 60)
 layout_mode = 2
 size_flags_vertical = 6
 size_flags_stretch_ratio = 0.0
-texture_normal = ExtResource("4_tk0rd")
-texture_pressed = ExtResource("5_dego3")
-texture_hover = ExtResource("6_4yk05")
+texture_normal = ExtResource("11_kob1i")
+texture_pressed = ExtResource("9_xglro")
+texture_hover = ExtResource("12_1nb3b")
 ignore_texture_size = true
 stretch_mode = 4
 
 [node name="puzzle3" type="Label" parent="MarginContainer/GridContainer/Puzzle_3/selectPuzzle"]
+visible = false
 layout_mode = 2
 offset_left = 57.0
 offset_top = 6.0
@@ -190,8 +206,8 @@ custom_minimum_size = Vector2(250, 250)
 layout_mode = 2
 size_flags_vertical = 4
 disabled = true
-texture_normal = ExtResource("3_5n7k7")
-texture_disabled = ExtResource("6_iwtrs")
+texture_normal = ExtResource("7_sg514")
+texture_disabled = ExtResource("3_fmtt3")
 ignore_texture_size = true
 stretch_mode = 4
 
@@ -200,13 +216,14 @@ custom_minimum_size = Vector2(70, 60)
 layout_mode = 2
 size_flags_vertical = 6
 size_flags_stretch_ratio = 0.0
-texture_normal = ExtResource("4_tk0rd")
-texture_pressed = ExtResource("5_dego3")
-texture_hover = ExtResource("6_4yk05")
+texture_normal = ExtResource("13_gy4jf")
+texture_pressed = ExtResource("14_mdgwo")
+texture_hover = ExtResource("15_3oiie")
 ignore_texture_size = true
 stretch_mode = 4
 
 [node name="puzzle4" type="Label" parent="MarginContainer/GridContainer/Puzzle_4/selectPuzzle"]
+visible = false
 layout_mode = 2
 offset_left = 57.0
 offset_top = 6.0
@@ -229,8 +246,8 @@ custom_minimum_size = Vector2(250, 250)
 layout_mode = 2
 size_flags_vertical = 4
 disabled = true
-texture_normal = ExtResource("3_5n7k7")
-texture_disabled = ExtResource("6_iwtrs")
+texture_normal = ExtResource("7_sg514")
+texture_disabled = ExtResource("3_fmtt3")
 ignore_texture_size = true
 stretch_mode = 4
 
@@ -239,13 +256,14 @@ custom_minimum_size = Vector2(70, 60)
 layout_mode = 2
 size_flags_vertical = 6
 size_flags_stretch_ratio = 0.0
-texture_normal = ExtResource("4_tk0rd")
-texture_pressed = ExtResource("5_dego3")
-texture_hover = ExtResource("6_4yk05")
+texture_normal = ExtResource("16_e00mh")
+texture_pressed = ExtResource("17_wa1uj")
+texture_hover = ExtResource("18_k7qxo")
 ignore_texture_size = true
 stretch_mode = 4
 
 [node name="puzzle5" type="Label" parent="MarginContainer/GridContainer/Puzzle_5/selectPuzzle"]
+visible = false
 layout_mode = 2
 offset_left = 57.0
 offset_top = 6.0
@@ -267,7 +285,7 @@ vertical = true
 custom_minimum_size = Vector2(250, 250)
 layout_mode = 2
 size_flags_vertical = 4
-texture_normal = ExtResource("8_f6y1a")
+texture_normal = ExtResource("19_gh13s")
 ignore_texture_size = true
 stretch_mode = 4
 
@@ -276,13 +294,12 @@ custom_minimum_size = Vector2(70, 60)
 layout_mode = 2
 size_flags_vertical = 6
 size_flags_stretch_ratio = 0.0
-texture_normal = ExtResource("4_tk0rd")
-texture_pressed = ExtResource("5_dego3")
-texture_hover = ExtResource("6_4yk05")
+texture_normal = ExtResource("20_k2vvm")
 ignore_texture_size = true
 stretch_mode = 4
 
 [node name="puzzleInfo" type="Label" parent="MarginContainer/GridContainer/Puzzle_6/selectPuzzle"]
+visible = false
 layout_mode = 2
 offset_left = 57.0
 offset_top = 6.0
@@ -300,9 +317,9 @@ offset_top = 40.0
 offset_right = 370.0
 offset_bottom = 295.0
 scale = Vector2(0.5, 0.5)
-texture_normal = ExtResource("7_vjejt")
-texture_pressed = ExtResource("8_p3bin")
-texture_hover = ExtResource("9_nqbwe")
+texture_normal = ExtResource("9_ymct5")
+texture_pressed = ExtResource("10_ch2of")
+texture_hover = ExtResource("11_e1egb")
 stretch_mode = 4
 
 [connection signal="pressed" from="MarginContainer/GridContainer/Puzzle_1/selectPuzzle" to="." method="_on_select_puzzle_pressed"]

@@ -1,4 +1,5 @@
 extends Control
 
-func _on_back_btn_pressed():
+#Home Button
+func _on_home_btn_pressed():
 	get_tree().change_scene_to_file("res://src/scenes/MainScreen.tscn")

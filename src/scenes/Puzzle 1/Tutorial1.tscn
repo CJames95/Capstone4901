@@ -1,0 +1,98 @@
+[gd_scene load_steps=16 format=3 uid="uid://deolw5aei30wc"]
+
+[ext_resource type="Script" path="res://src/scripts/Puzzle 1/Tutorial1.gd" id="1_8xb0q"]
+[ext_resource type="Texture2D" uid="uid://cpyowiueotikd" path="res://src/art/Main and Puzzle Select/Puzzle Select/Puzzle_Select_Elements-1.png" id="1_46dyl"]
+[ext_resource type="Texture2D" uid="uid://deu1dsoouwfg" path="res://src/art/Main and Puzzle Select/Tutorial/Rectangle 51.png" id="2_rxwte"]
+[ext_resource type="Texture2D" uid="uid://cyjl86tdyq8x6" path="res://src/art/Main and Puzzle Select/Tutorial/Tutorial_HomeBtn_Normal.png" id="3_xo2nw"]
+[ext_resource type="Texture2D" uid="uid://bmjqaa0bwx7qk" path="res://src/art/Main and Puzzle Select/Tutorial/Tutorial_HomeBtn_Clicked.png" id="4_nkq5u"]
+[ext_resource type="Texture2D" uid="uid://brhmpit84lofh" path="res://src/art/Main and Puzzle Select/Tutorial/Tutorial_HomeBtn_Selected.png" id="5_7a3vb"]
+[ext_resource type="Texture2D" uid="uid://cy2lp0671tfil" path="res://src/art/Main and Puzzle Select/Tutorial/Skip_Btn_Normal.png" id="6_pn8it"]
+[ext_resource type="Texture2D" uid="uid://bucgk8tamm0qj" path="res://src/art/Main and Puzzle Select/Tutorial/Skip_Btn_Clicked.png" id="7_jmtif"]
+[ext_resource type="Texture2D" uid="uid://b24xlub20sv61" path="res://src/art/Main and Puzzle Select/Tutorial/Skip_Btn_Selected.png" id="8_m8lgr"]
+[ext_resource type="Texture2D" uid="uid://bcl3dkx637klo" path="res://src/art/Main and Puzzle Select/Tutorial/Tutorial_PreviousBtn_Normal.png" id="9_b42y5"]
+[ext_resource type="Texture2D" uid="uid://bblitg24aab0i" path="res://src/art/Main and Puzzle Select/Tutorial/Tutorial_PreviousBtn_Clicked.png" id="10_o73il"]
+[ext_resource type="Texture2D" uid="uid://dusjjok5ty5hs" path="res://src/art/Main and Puzzle Select/Tutorial/Tutorial_PreviousBtn_Selected.png" id="11_2y8wp"]
+[ext_resource type="Texture2D" uid="uid://dgiod3wnp521d" path="res://src/art/Main and Puzzle Select/Tutorial/Tutorial_NextBtn_Normal.png" id="12_21daf"]
+[ext_resource type="Texture2D" uid="uid://ct1s23i7kcis8" path="res://src/art/Main and Puzzle Select/Tutorial/Tutorial_NextBtn_Clicked.png" id="13_o2smx"]
+[ext_resource type="Texture2D" uid="uid://lrwrsvits2wb" path="res://src/art/Main and Puzzle Select/Tutorial/Tutorial_NextBtn_Selected.png" id="14_e1tel"]
+
+[node name="Tutorial" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_8xb0q")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_46dyl")
+expand_mode = 3
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = -2.0
+offset_top = 149.0
+offset_right = 1649.0
+offset_bottom = 962.0
+texture = ExtResource("2_rxwte")
+expand_mode = 3
+
+[node name="HomeBtn" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = -1
+offset_left = 103.0
+offset_top = 85.0
+offset_right = 228.0
+offset_bottom = 219.0
+texture_normal = ExtResource("3_xo2nw")
+texture_pressed = ExtResource("4_nkq5u")
+texture_hover = ExtResource("5_7a3vb")
+ignore_texture_size = true
+stretch_mode = 4
+
+[node name="SkipBtn" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = -1
+offset_left = 235.0
+offset_top = 85.0
+offset_right = 360.0
+offset_bottom = 244.0
+texture_normal = ExtResource("6_pn8it")
+texture_pressed = ExtResource("7_jmtif")
+texture_hover = ExtResource("8_m8lgr")
+ignore_texture_size = true
+stretch_mode = 4
+
+[node name="PrevBtn" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 1012.0
+offset_top = 917.0
+offset_right = 1109.0
+offset_bottom = 1009.0
+texture_normal = ExtResource("9_b42y5")
+texture_pressed = ExtResource("10_o73il")
+texture_hover = ExtResource("11_2y8wp")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="NextBtn" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 1120.0
+offset_top = 917.0
+offset_right = 1217.0
+offset_bottom = 1009.0
+texture_normal = ExtResource("12_21daf")
+texture_pressed = ExtResource("13_o2smx")
+texture_hover = ExtResource("14_e1tel")
+ignore_texture_size = true
+stretch_mode = 5
+
+[connection signal="pressed" from="HomeBtn" to="." method="_on_home_btn_pressed"]
+[connection signal="pressed" from="SkipBtn" to="." method="_on_skip_btn_pressed"]

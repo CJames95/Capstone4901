@@ -12,7 +12,3 @@ func _on_exit_btn_pressed():
 
 func _on_button_pressed():
 	get_tree().quit()
-
-func _on_keep_playing_btn_pressed():
-	escape_menu.hide()
-	escape_menu_showing == false
