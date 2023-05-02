@@ -1,0 +1,11 @@
+[
+	{"text": "For this final puzzle, we have saved the best for last! The final two heuristics are System and Real World Matching and Consistency and Standards."},
+	{"text": "Matching your system to the real world can be difficult and often involves testing and research during development, but what do we even mean by this?"},
+	{"text": "As we covered in the last tutorial, your users are not manuals, and will often have far less experience and knowledge than you."},
+	{"text": "To this end, try to avoid using techinical jargon in your product that the average person wouldn't understand. Instead, use language and concepts that are familiar and comfortable for your target audience."},
+	{"text": "Try to design your product in a manner that is intuitive and matches the way people operate in the real world."},
+	{"text": "For instance, the 'Recycle Bin' on most computers looks exactly like the ones we put our soda cans in. "},
+	{"text": "Consistency and Standards is exactly as it sounds - be consistent and keep in line with industry standards. Users should be secure in the knowledge that functionalities of the same name/nature will work similarly across platforms."},
+	{"text": "For example, many games will assign certain controls to the same buttons across a console. Imagine an Xbox game that assigns the 'jump' input to the right trigger, when the standard is the 'A' or 'Y' button. Users would immediately take issue with this, and the game would suffer."},
+	{"text": "Keep these heuristics in mind as you []."}
+]

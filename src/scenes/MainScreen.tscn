@@ -203,5 +203,6 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/PlayBtn" to="." method="_on_play_btn_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/SettingsBtn" to="." method="_on_info_btn_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/ExitBtn" to="ExitMenu" method="_on_exit_btn_pressed"]
 [connection signal="pressed" from="ExitMenu/Background/SubViewportContainer/SubViewport/Button" to="ExitMenu" method="_on_button_pressed"]

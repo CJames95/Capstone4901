@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://556rm2eghbls"]
 
 [ext_resource type="Script" path="res://dragndrop.gd" id="1_17bpg"]
-[ext_resource type="Texture2D" uid="uid://bvc6uprss3hkj" path="res://icon.png" id="2_dvj4c"]
+[ext_resource type="Texture2D" uid="uid://bu0unmva7tdyp" path="res://icon.png" id="2_dvj4c"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_xqwse"]
 radius = 30.0

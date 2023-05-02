@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://deolw5aei30wc"]
+[gd_scene load_steps=15 format=3 uid="uid://cw7pbnuvb5t8u"]
 
 [ext_resource type="Script" path="res://src/scripts/Puzzle 1/Tutorial1.gd" id="1_8xb0q"]
 [ext_resource type="Texture2D" uid="uid://cpyowiueotikd" path="res://src/art/Main and Puzzle Select/Puzzle Select/Puzzle_Select_Elements-1.png" id="1_46dyl"]
@@ -9,12 +9,11 @@
 [ext_resource type="Texture2D" uid="uid://cy2lp0671tfil" path="res://src/art/Main and Puzzle Select/Tutorial/Skip_Btn_Normal.png" id="6_pn8it"]
 [ext_resource type="Texture2D" uid="uid://bucgk8tamm0qj" path="res://src/art/Main and Puzzle Select/Tutorial/Skip_Btn_Clicked.png" id="7_jmtif"]
 [ext_resource type="Texture2D" uid="uid://b24xlub20sv61" path="res://src/art/Main and Puzzle Select/Tutorial/Skip_Btn_Selected.png" id="8_m8lgr"]
-[ext_resource type="Texture2D" uid="uid://bcl3dkx637klo" path="res://src/art/Main and Puzzle Select/Tutorial/Tutorial_PreviousBtn_Normal.png" id="9_b42y5"]
-[ext_resource type="Texture2D" uid="uid://bblitg24aab0i" path="res://src/art/Main and Puzzle Select/Tutorial/Tutorial_PreviousBtn_Clicked.png" id="10_o73il"]
-[ext_resource type="Texture2D" uid="uid://dusjjok5ty5hs" path="res://src/art/Main and Puzzle Select/Tutorial/Tutorial_PreviousBtn_Selected.png" id="11_2y8wp"]
 [ext_resource type="Texture2D" uid="uid://dgiod3wnp521d" path="res://src/art/Main and Puzzle Select/Tutorial/Tutorial_NextBtn_Normal.png" id="12_21daf"]
 [ext_resource type="Texture2D" uid="uid://ct1s23i7kcis8" path="res://src/art/Main and Puzzle Select/Tutorial/Tutorial_NextBtn_Clicked.png" id="13_o2smx"]
 [ext_resource type="Texture2D" uid="uid://lrwrsvits2wb" path="res://src/art/Main and Puzzle Select/Tutorial/Tutorial_NextBtn_Selected.png" id="14_e1tel"]
+[ext_resource type="PackedScene" uid="uid://cj8opweho7ldl" path="res://src/scenes/Puzzle 1/scene_transition.tscn" id="16_0egrm"]
+[ext_resource type="Script" path="res://src/scripts/Puzzle 1/Dialogue_T1.gd" id="17_t7bb3"]
 
 [node name="Tutorial" type="Control"]
 layout_mode = 3
@@ -70,18 +69,6 @@ texture_hover = ExtResource("8_m8lgr")
 ignore_texture_size = true
 stretch_mode = 4
 
-[node name="PrevBtn" type="TextureButton" parent="."]
-layout_mode = 0
-offset_left = 1012.0
-offset_top = 917.0
-offset_right = 1109.0
-offset_bottom = 1009.0
-texture_normal = ExtResource("9_b42y5")
-texture_pressed = ExtResource("10_o73il")
-texture_hover = ExtResource("11_2y8wp")
-ignore_texture_size = true
-stretch_mode = 5
-
 [node name="NextBtn" type="TextureButton" parent="."]
 layout_mode = 0
 offset_left = 1120.0
@@ -94,5 +81,24 @@ texture_hover = ExtResource("14_e1tel")
 ignore_texture_size = true
 stretch_mode = 5
 
+[node name="SceneTransition" parent="." instance=ExtResource("16_0egrm")]
+
+[node name="Dialogue" type="CanvasLayer" parent="."]
+script = ExtResource("17_t7bb3")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Dialogue"]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Chat2" type="RichTextLabel" parent="Dialogue/NinePatchRect"]
+layout_mode = 2
+offset_left = 312.0
+offset_top = 427.0
+offset_right = 1180.0
+offset_bottom = 635.0
+theme_override_font_sizes/normal_font_size = 30
+text = "Chat"
+
 [connection signal="pressed" from="HomeBtn" to="." method="_on_home_btn_pressed"]
 [connection signal="pressed" from="SkipBtn" to="." method="_on_skip_btn_pressed"]
+[connection signal="pressed" from="NextBtn" to="Dialogue" method="_on_next_btn_pressed"]

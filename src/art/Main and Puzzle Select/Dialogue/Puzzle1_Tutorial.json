@@ -1,0 +1,10 @@
+[
+	{"text": "This puzzle will cover two of the Nielsen Usability Heuristics: Visibility of System Status and Help and Documentation."},
+	{"text": "Visibility of System Status is all about letting the user know exactly what the current state of the system is."},
+	{"text": "For instance, when using online search engines like Google, how do you know where your cursor is, or what actions you can currently perform?"},
+	{"text": "One part of this answer is implementing a cursor that blinks when the user clicks to input a query into the search bar, letting them know they are able to type."},
+	{"text": "Other examples of this heuristic include displaying the name of the current page (i.e. 'Home' or 'Account') and displaying the avatar of the person currently logged in."},
+	{"text": "Help and Documentation is quite true to its name. Users should have access to information that will allow them to effectively use your product."},
+	{"text": "Many websites will have a 'Q&A' page for frequently asked questions, or games will have built-in manuals to explain the mechanics."},
+	{"text": "Keep these two heuristics in mind as you assist this old-definitely-not-the-same-cat with his website."}
+]

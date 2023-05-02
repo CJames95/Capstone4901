@@ -1,0 +1,11 @@
+[
+	{"text": "This puzzle will go over a whopping three heuristics: User Control and Freedom, Error Prevention, and User Error Design and Solution."},
+	{"text": "User Control and Freedom means users should always have an 'emergency exit.' What do we mean by this? We mean that humans can be error prone, so UI designers should always allow them to undo an action or exit a process."},
+	{"text": "As an example, check out the top left corner of this page! That handy-dandy 'Home' button allows users to exit out of this tutorial if they came into it by mistake."},
+	{"text": "What is Error Prevention in UI design, you ask? Simply put, the fewer chances the user has to make an error, the fewer errors they will make."},
+	{"text": "Try to design your product in a way that users are less likely to mess up, or give them the chance to confirm their actions before implementing them with warning messages."},
+	{"text": "The third heuristic in this puzzle is all about helping users understand the error they made."},
+	{"text": "Users are not walking manuals, don't just give them an error code and move on! Explain what went wrong clearly and concisely, avoiding technical lingo."},
+	{"text": "Visuals also play a role here - don't shy away from bright and bold colors. And, most importantly, tell the user how they can fix the issue."},
+	{"text": "Keep these heuristics in mind as you []."}
+]

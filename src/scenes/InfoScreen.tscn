@@ -1,0 +1,64 @@
+[gd_scene load_steps=9 format=3 uid="uid://ca2ealk8fa3rw"]
+
+[ext_resource type="Script" path="res://src/scripts/Main and Puzzle Select/InfoScreen.gd" id="1_3mfy1"]
+[ext_resource type="Texture2D" uid="uid://cpyowiueotikd" path="res://src/art/Main and Puzzle Select/Puzzle Select/Puzzle_Select_Elements-1.png" id="2_4q886"]
+[ext_resource type="Texture2D" uid="uid://xr4gstlj63bg" path="res://src/art/Main and Puzzle Select/Info Page/info.png" id="3_nwvil"]
+[ext_resource type="Texture2D" uid="uid://k2db2t12w7ww" path="res://src/art/Main and Puzzle Select/Info Page/names.png" id="4_njumd"]
+[ext_resource type="Texture2D" uid="uid://dxt1c5f4xfdq8" path="res://src/art/Main and Puzzle Select/Puzzle Select/Puzzle_1_Icon.png" id="5_i7bkq"]
+[ext_resource type="Texture2D" uid="uid://b3phmkg6w16u6" path="res://src/art/Main and Puzzle Select/Puzzle Select/BackBtn_Normal.png" id="6_s5ja2"]
+[ext_resource type="Texture2D" uid="uid://cqoatq2bqexl2" path="res://src/art/Main and Puzzle Select/Puzzle Select/BackBtn_Clicked.png" id="7_say2s"]
+[ext_resource type="Texture2D" uid="uid://befws0jbo3gh8" path="res://src/art/Main and Puzzle Select/Puzzle Select/BackBtn_Selected.png" id="8_ktvgb"]
+
+[node name="InfoScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_3mfy1")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 1927.0
+offset_bottom = 1084.0
+texture = ExtResource("2_4q886")
+expand_mode = 3
+
+[node name="Info" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = -293.0
+offset_top = 164.0
+offset_right = 1410.0
+offset_bottom = 1081.0
+texture = ExtResource("3_nwvil")
+expand_mode = 1
+
+[node name="Names" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 621.0
+offset_top = 443.0
+offset_right = 2057.0
+offset_bottom = 1227.0
+texture = ExtResource("4_njumd")
+
+[node name="Cat" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 1164.0
+offset_top = 195.0
+offset_right = 1646.0
+offset_bottom = 657.0
+texture = ExtResource("5_i7bkq")
+expand_mode = 1
+
+[node name="TextureButton" type="TextureButton" parent="."]
+layout_mode = 0
+offset_right = 233.0
+offset_bottom = 146.0
+texture_normal = ExtResource("6_s5ja2")
+texture_pressed = ExtResource("7_say2s")
+texture_hover = ExtResource("8_ktvgb")
+ignore_texture_size = true
+stretch_mode = 0
+
+[connection signal="pressed" from="TextureButton" to="." method="_on_back_btn_pressed"]

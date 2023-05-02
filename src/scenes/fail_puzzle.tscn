@@ -1,10 +1,14 @@
-[gd_scene load_steps=6 format=3 uid="uid://dtixhjm34asgd"]
+[gd_scene load_steps=10 format=3 uid="uid://dtixhjm34asgd"]
 
 [ext_resource type="Script" path="res://src/scripts/fail_puzzle.gd" id="1_rhvtm"]
-[ext_resource type="Texture2D" uid="uid://cpyowiueotikd" path="res://src/art/Main and Puzzle Select/Puzzle_Select_Elements-1.png" id="1_rjj1h"]
+[ext_resource type="Texture2D" uid="uid://cpyowiueotikd" path="res://src/art/Main and Puzzle Select/Puzzle Select/Puzzle_Select_Elements-1.png" id="1_rjj1h"]
 [ext_resource type="Texture2D" uid="uid://f8iokh06f0su" path="res://src/art/fail.PNG" id="3_ocj7x"]
 [ext_resource type="Texture2D" uid="uid://b4qi1yura1o6y" path="res://src/art/retry.PNG" id="4_54ecp"]
+[ext_resource type="Texture2D" uid="uid://dpnnvrosra31e" path="res://src/art/retry_p.png" id="5_5nykc"]
 [ext_resource type="Texture2D" uid="uid://cn02y4duck51j" path="res://src/art/exit.PNG" id="5_8wgw4"]
+[ext_resource type="Texture2D" uid="uid://b1s61h5w8auew" path="res://src/art/retry_h.png" id="6_eion6"]
+[ext_resource type="Texture2D" uid="uid://bu7odhbxmurbu" path="res://src/art/exit_p.png" id="8_s3pml"]
+[ext_resource type="Texture2D" uid="uid://cfqmq773iyyif" path="res://src/art/exit_h.png" id="9_hjf7s"]
 
 [node name="Fail Puzzle" type="Control"]
 layout_mode = 3
@@ -25,10 +29,10 @@ expand_mode = 3
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 0
-offset_left = 593.0
-offset_top = 156.0
-offset_right = 1329.0
-offset_bottom = 567.0
+offset_left = 261.0
+offset_top = 132.0
+offset_right = 1479.0
+offset_bottom = 543.0
 texture = ExtResource("3_ocj7x")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
@@ -58,8 +62,8 @@ size_flags_vertical = 4
 [node name="Retry" type="TextureButton" parent="MarginContainer/GridContainer/Retry"]
 layout_mode = 2
 texture_normal = ExtResource("4_54ecp")
-texture_pressed = ExtResource("4_54ecp")
-texture_hover = ExtResource("4_54ecp")
+texture_pressed = ExtResource("5_5nykc")
+texture_hover = ExtResource("6_eion6")
 
 [node name="Exit" type="BoxContainer" parent="MarginContainer/GridContainer"]
 custom_minimum_size = Vector2(900, 0)
@@ -71,8 +75,8 @@ alignment = 2
 [node name="Exit" type="TextureButton" parent="MarginContainer/GridContainer/Exit"]
 layout_mode = 2
 texture_normal = ExtResource("5_8wgw4")
-texture_pressed = ExtResource("5_8wgw4")
-texture_hover = ExtResource("5_8wgw4")
+texture_pressed = ExtResource("8_s3pml")
+texture_hover = ExtResource("9_hjf7s")
 
 [connection signal="pressed" from="MarginContainer/GridContainer/Retry/Retry" to="." method="_on_retry_btn_pressed"]
 [connection signal="pressed" from="MarginContainer/GridContainer/Exit/Exit" to="." method="_on_exit_btn_pressed"]

@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://src/scripts/Puzzle 1/Puzzle1_Story.gd" id="1_c4bun"]
 [ext_resource type="Texture2D" uid="uid://cpyowiueotikd" path="res://src/art/Main and Puzzle Select/Puzzle Select/Puzzle_Select_Elements-1.png" id="1_l5mc4"]
 [ext_resource type="Texture2D" uid="uid://bjkygddnv1gwm" path="res://src/art/Main and Puzzle Select/Dialogue/Dialoge_TextBox.png" id="3_38huv"]
-[ext_resource type="PackedScene" path="res://src/scenes/Puzzle 1/scene_transition.tscn" id="3_pet8b"]
+[ext_resource type="PackedScene" uid="uid://cj8opweho7ldl" path="res://src/scenes/Puzzle 1/scene_transition.tscn" id="3_pet8b"]
 [ext_resource type="Texture2D" uid="uid://bl1tcu1h3bd66" path="res://src/art/Main and Puzzle Select/Dialogue/Dialogue_NextBtn_Normal.png" id="4_ddhdb"]
 [ext_resource type="Texture2D" uid="uid://bdvg8i5yuvu1a" path="res://src/art/Main and Puzzle Select/Dialogue/Dialogue_NextBtn_Clicked.png" id="5_xk8ds"]
 [ext_resource type="Texture2D" uid="uid://bwtfqq2ysijxg" path="res://src/art/Main and Puzzle Select/Dialogue/Dialogue_NextBtn_Selected.png" id="6_2w137"]
@@ -129,6 +129,5 @@ texture_hover = ExtResource("14_ec7ju")
 ignore_texture_size = true
 stretch_mode = 4
 
-[connection signal="pressed" from="DialogueBox/DialogueBackground/NextBtn" to="Dialogue" method="_on_next_btn_pressed"]
 [connection signal="pressed" from="HomeBtn" to="." method="_on_texture_button_pressed"]
 [connection signal="pressed" from="SkipBtn" to="." method="_on_skip_btn_pressed"]
