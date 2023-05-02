@@ -13,7 +13,7 @@ var area_entered = false
 # searchbar_piece scene, and searchbar_icon_node is established as the node
 # that shows the little searchbar icon in this scene.
 func _ready():
-	root_scene = get_node("/root/Puzzle Scene/Workspace")
+	root_scene = get_node("/root/Puzzle1/Workspace")
 	searchbar_instance = searchbar.instantiate()
 	searchbar_icon_node = get_node("Searchbar Icon")
 

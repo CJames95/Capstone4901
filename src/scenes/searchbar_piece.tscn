@@ -1,10 +1,10 @@
 [gd_scene load_steps=7 format=3 uid="uid://cs1gfalhewjt4"]
 
 [ext_resource type="Script" path="res://src/scripts/searchbar_drag_and_drop.gd" id="1_yn7to"]
-[ext_resource type="Texture2D" uid="uid://u4shl70bs3mx" path="res://src/art/search_scaled.png" id="2_bfyqk"]
+[ext_resource type="Texture2D" uid="uid://6wu3208d583v" path="res://src/art/Main and Puzzle Select/Puzzle 1/Puzzle Pieces/Search Bar_1.png" id="2_prter"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4ejex"]
-size = Vector2(680, 40)
+size = Vector2(1800, 160)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7gtb0"]
 bg_color = Color(0.807843, 0.807843, 0.807843, 1)
@@ -20,7 +20,7 @@ script = ExtResource("1_yn7to")
 
 [node name="Search" type="Sprite2D" parent="."]
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("2_bfyqk")
+texture = ExtResource("2_prter")
 
 [node name="Search Text" type="RichTextLabel" parent="Search"]
 visible = false
@@ -84,8 +84,6 @@ one_shot = true
 
 [connection signal="gui_input" from="Search/Search Text" to="." method="_on_rich_text_label_gui_input"]
 [connection signal="input_event" from="Search/Area2D" to="." method="_on_area_2d_input_event"]
-[connection signal="mouse_entered" from="Search/Area2D" to="." method="_on_area_2d_mouse_entered"]
-[connection signal="mouse_exited" from="Search/Area2D" to="." method="_on_area_2d_mouse_exited"]
 [connection signal="mouse_entered" from="Search Menu" to="." method="_on_search_menu_mouse_entered"]
 [connection signal="mouse_exited" from="Search Menu" to="." method="_on_search_menu_mouse_exited"]
 [connection signal="mouse_entered" from="Search Menu/VBoxContainer/Search Text Checkbox" to="." method="_on_search_text_checkbox_mouse_entered"]

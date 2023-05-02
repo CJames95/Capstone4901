@@ -13,7 +13,7 @@ var area_entered = false
 # logo_piece scene, and logo_icon_node is established as the node
 # that shows the little logo icon in this scene.
 func _ready():
-	root_scene = get_node("/root/Puzzle Scene/Workspace")
+	root_scene = get_node("/root/Puzzle1/Workspace")
 	logo_instance = logo.instantiate()
 	logo_icon_node = get_node("Small Logo")
 

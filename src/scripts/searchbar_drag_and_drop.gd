@@ -93,11 +93,12 @@ func _input(event):
 			var shortest_dist = 15
 			for i in len(rest_nodes):
 				var distance = global_position.distance_to(rest_nodes[i].global_position)
-				if distance < shortest_dist and i % 81 > 7 and i % 81 < 73 and rest_nodes[i].return_modulate() != Color.WEB_MAROON:
+				if distance < shortest_dist and i % 69 > 7 and i % 69 < 61 and rest_nodes[i].return_modulate() != Color.WEB_MAROON:
 					var node_test = false
-					for x in 9:
+					for x in 23:
 						if x == 0:
 							x = x + 1
+							print(i%69)
 						if(rest_nodes[i+x].return_modulate() == Color.WEB_MAROON
 						or rest_nodes[i-x].return_modulate() == Color.WEB_MAROON):
 							node_test = true
@@ -105,23 +106,18 @@ func _input(event):
 					if node_test == false:
 						if root_rest_node != null:
 							rest_nodes[root_rest_node].deselect()
-							for j in 9:
-								if j == 0:
-									j = j + 1
-								rest_nodes[root_rest_node-j].deselect()
-							for j in 9:
-								if j == 0:
-									j = j + 1
-								rest_nodes[root_rest_node+j].deselect()
+							for j in 3:
+								for k in 23:
+									if k == 0:
+										k = k + 1
+									rest_nodes[root_rest_node-k].deselect()
+									rest_nodes[root_rest_node+k].deselect()
 						root_rest_node = i
 						rest_nodes[i].select()
-						for j in 9:
+						for j in 23:
 							if j == 0:
 								j = j + 1
 							rest_nodes[i-j].select()
-						for j in 9:
-							if j == 0:
-								j = j + 1
 							rest_nodes[i+j].select()
 						rest_point = rest_nodes[i].global_position
 						shortest_dist = distance
@@ -136,13 +132,10 @@ func delete_instance():
 	created = true
 	if root_rest_node != null and rest_point != null:
 		rest_nodes[root_rest_node].deselect()
-		for j in 9:
+		for j in 23:
 			if j == 0:
 				j = j + 1
 			rest_nodes[root_rest_node-j].deselect()
-		for j in 9:
-			if j == 0:
-				j = j + 1
 			rest_nodes[root_rest_node+j].deselect()
 	rest_point = null
 	root_rest_node = null

@@ -10,7 +10,7 @@ var help_and_doc = 0
 # Performs a series of checks to determine if the user fulfilled
 # their tasks for this puzzle. It then shows a confirmation window
 # so that the user can confirm that they want to finish.
-func _on_finish_button_button_down():
+func _on_confirm_btn_pressed():
 	if $Workspace.has_node("Search Bar Piece"):
 		if has_searchbar < 1:
 			has_searchbar = has_searchbar + 1
@@ -61,3 +61,11 @@ func _on_yes_button_down():
 # If they select no, the confirmation window is hidden.
 func _on_no_button_down():
 	$"End Puzzle Confirmation".hide()
+	
+#Home Button
+func _on_home_btn_pressed():
+	get_tree().change_scene_to_file("res://src/scenes/MainScreen.tscn")
+	
+func _on_info_btn_pressed():
+	get_tree().change_scene_to_file("res://src/scenes/Puzzle 1/Tutorial1.tscn")
+

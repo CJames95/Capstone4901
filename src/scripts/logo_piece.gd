@@ -51,7 +51,7 @@ func _input(event):
 			var shortest_dist = 15
 			for i in len(rest_nodes):
 				var distance = global_position.distance_to(rest_nodes[i].global_position)
-				if distance < shortest_dist and i % 81 > 5 and i % 81 < 75 and rest_nodes[i].return_modulate() != Color.WEB_MAROON:
+				if distance < shortest_dist and i % 74 > 5 and i % 74 < 68 and rest_nodes[i].return_modulate() != Color.WEB_MAROON:
 					var node_test = false
 					for x in 9:
 						if x == 0:
@@ -63,10 +63,10 @@ func _input(event):
 					if node_test == false:
 						if root_rest_node != null:
 							rest_nodes[root_rest_node].deselect()
-							row = (root_rest_node-(root_rest_node%81))/81
+							row = (root_rest_node-(root_rest_node%74))/74
 							for j in range(0, 7):
-								rowplus = ((row+j)*81)+(root_rest_node%81)
-								rowminus = ((row-j)*81)+(root_rest_node%81)
+								rowplus = ((row+j)*74)+(root_rest_node%74)
+								rowminus = ((row-j)*74)+(root_rest_node%74)
 								for k in range(1, 7):
 									if j == 0:
 										rest_nodes[root_rest_node-k].deselect()
