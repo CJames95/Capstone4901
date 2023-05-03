@@ -12,6 +12,7 @@ func _ready():
 	$NinePatchRect/Name2.text = dialogue[0]['name']
 	$NinePatchRect/Chat2.text = dialogue[0]['text']
 
+
 func start():
 	dialogue = jsonDictionary
 
@@ -28,4 +29,3 @@ func next_script():
 	
 	$NinePatchRect/Name2.text = dialogue[currentDialogue]['name']
 	$NinePatchRect/Chat2.text = dialogue[currentDialogue]['text']
-	

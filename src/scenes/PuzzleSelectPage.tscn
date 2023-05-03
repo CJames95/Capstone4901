@@ -1,12 +1,12 @@
-[gd_scene load_steps=27 format=3 uid="uid://cwveo82vcsefs"]
+[gd_scene load_steps=30 format=3 uid="uid://cwveo82vcsefs"]
 
 [ext_resource type="Texture2D" uid="uid://cpyowiueotikd" path="res://src/art/Main and Puzzle Select/Puzzle Select/Puzzle_Select_Elements-1.png" id="2_7daq8"]
-[ext_resource type="Texture2D" uid="uid://dxt1c5f4xfdq8" path="res://src/art/Main and Puzzle Select/Puzzle Select/Puzzle_1_Icon.png" id="2_pcuke"]
+[ext_resource type="Texture2D" uid="uid://bipnwkrp0l1lt" path="res://src/art/Main and Puzzle Select/Puzzle Select/Puzzle1.png" id="2_ebi6f"]
 [ext_resource type="Texture2D" uid="uid://dc41hblv1gkpu" path="res://src/art/Main and Puzzle Select/Puzzle Select/Lock_Btn.png" id="3_fmtt3"]
 [ext_resource type="Texture2D" uid="uid://cc7epw1lcyx4k" path="res://src/art/Main and Puzzle Select/Puzzle Select/Main_P1Btn_Normal.png" id="4_80owl"]
 [ext_resource type="Texture2D" uid="uid://cmf7kyc1lx6wa" path="res://src/art/Main and Puzzle Select/Puzzle Select/Main_P1Btn_Clicked.png" id="5_6q6gq"]
 [ext_resource type="Texture2D" uid="uid://84nh00fhno13" path="res://src/art/Main and Puzzle Select/Puzzle Select/Main_P1Btn_Selected.png" id="6_3612n"]
-[ext_resource type="Texture2D" uid="uid://cdibkqp75wmk3" path="res://src/art/Main and Puzzle Select/Puzzle Select/PuzzleInfo-1.png" id="7_sg514"]
+[ext_resource type="Texture2D" uid="uid://b11c73vuk73y2" path="res://src/art/Main and Puzzle Select/Puzzle Select/Puzzle2.png" id="7_d57ve"]
 [ext_resource type="Texture2D" uid="uid://dxhbgobyia8cn" path="res://src/art/Main and Puzzle Select/Puzzle Select/Main_P2Btn_Normal.png" id="8_6ksjx"]
 [ext_resource type="Texture2D" uid="uid://b5ywwb43jgsrv" path="res://src/art/Main and Puzzle Select/Puzzle Select/Main_P3Btn_Clicked.png" id="9_xglro"]
 [ext_resource type="Texture2D" uid="uid://b3phmkg6w16u6" path="res://src/art/Main and Puzzle Select/Puzzle Select/BackBtn_Normal.png" id="9_ymct5"]
@@ -14,15 +14,18 @@
 [ext_resource type="Texture2D" uid="uid://cqoatq2bqexl2" path="res://src/art/Main and Puzzle Select/Puzzle Select/BackBtn_Clicked.png" id="10_ch2of"]
 [ext_resource type="Texture2D" uid="uid://covne8y62n50s" path="res://src/art/Main and Puzzle Select/Puzzle Select/Main_P2Btn_Selected.png" id="10_uci4r"]
 [ext_resource type="Texture2D" uid="uid://befws0jbo3gh8" path="res://src/art/Main and Puzzle Select/Puzzle Select/BackBtn_Selected.png" id="11_e1egb"]
+[ext_resource type="Texture2D" uid="uid://dgf4yxtp53q0y" path="res://src/art/Main and Puzzle Select/Puzzle Select/Puzzle3.png" id="11_gkqxc"]
 [ext_resource type="Texture2D" uid="uid://dp6eedr5qc48u" path="res://src/art/Main and Puzzle Select/Puzzle Select/Main_P3Btn_Normal.png" id="11_kob1i"]
 [ext_resource type="Texture2D" uid="uid://dwmrwynfxhw18" path="res://src/art/Main and Puzzle Select/Puzzle Select/Main_P3Btn_Selected.png" id="12_1nb3b"]
 [ext_resource type="Texture2D" uid="uid://d35bd6wawuqmg" path="res://src/art/Main and Puzzle Select/Puzzle Select/Main_P4Btn_Normal.png" id="13_gy4jf"]
 [ext_resource type="Texture2D" uid="uid://b8yl4ynf8lgwf" path="res://src/art/Main and Puzzle Select/Puzzle Select/Main_P4Btn_Clicked.png" id="14_mdgwo"]
 [ext_resource type="Texture2D" uid="uid://l8f7vbacdhqu" path="res://src/art/Main and Puzzle Select/Puzzle Select/Main_P4Btn_Selected.png" id="15_3oiie"]
+[ext_resource type="Texture2D" uid="uid://c0trsxrdbk1x0" path="res://src/art/Main and Puzzle Select/Puzzle Select/Puzzle4.png" id="15_de8cf"]
 [ext_resource type="Texture2D" uid="uid://c865qk8nyyaea" path="res://src/art/Main and Puzzle Select/Puzzle Select/Main_P5Btn_Normal.png" id="16_e00mh"]
 [ext_resource type="Texture2D" uid="uid://2lx3t4ke5bbx" path="res://src/art/Main and Puzzle Select/Puzzle Select/Main_P5Btn_Clicked.png" id="17_wa1uj"]
 [ext_resource type="Texture2D" uid="uid://b6b51uvy72isl" path="res://src/art/Main and Puzzle Select/Puzzle Select/Main_P5Btn_Selected.png" id="18_k7qxo"]
 [ext_resource type="Texture2D" uid="uid://c0s4jaryqfmc0" path="res://src/art/Main and Puzzle Select/Puzzle Select/PuzzleInfo.png" id="19_gh13s"]
+[ext_resource type="Texture2D" uid="uid://bafpb486lts87" path="res://src/art/Main and Puzzle Select/Puzzle Select/Puzzle5.png" id="19_xvymk"]
 [ext_resource type="Texture2D" uid="uid://351yn06j2yge" path="res://src/art/Main and Puzzle Select/Puzzle Select/Puzzle_InfoBtn_Normal.png" id="20_k2vvm"]
 
 [sub_resource type="GDScript" id="GDScript_cfup0"]
@@ -86,7 +89,7 @@ vertical = true
 custom_minimum_size = Vector2(250, 250)
 layout_mode = 2
 size_flags_vertical = 4
-texture_normal = ExtResource("2_pcuke")
+texture_normal = ExtResource("2_ebi6f")
 texture_disabled = ExtResource("3_fmtt3")
 ignore_texture_size = true
 stretch_mode = 4
@@ -125,8 +128,7 @@ vertical = true
 custom_minimum_size = Vector2(250, 250)
 layout_mode = 2
 size_flags_vertical = 4
-disabled = true
-texture_normal = ExtResource("7_sg514")
+texture_normal = ExtResource("7_d57ve")
 texture_disabled = ExtResource("3_fmtt3")
 ignore_texture_size = true
 stretch_mode = 4
@@ -165,8 +167,7 @@ vertical = true
 custom_minimum_size = Vector2(250, 250)
 layout_mode = 2
 size_flags_vertical = 4
-disabled = true
-texture_normal = ExtResource("7_sg514")
+texture_normal = ExtResource("11_gkqxc")
 texture_disabled = ExtResource("3_fmtt3")
 ignore_texture_size = true
 stretch_mode = 4
@@ -205,8 +206,7 @@ vertical = true
 custom_minimum_size = Vector2(250, 250)
 layout_mode = 2
 size_flags_vertical = 4
-disabled = true
-texture_normal = ExtResource("7_sg514")
+texture_normal = ExtResource("15_de8cf")
 texture_disabled = ExtResource("3_fmtt3")
 ignore_texture_size = true
 stretch_mode = 4
@@ -245,8 +245,7 @@ vertical = true
 custom_minimum_size = Vector2(250, 250)
 layout_mode = 2
 size_flags_vertical = 4
-disabled = true
-texture_normal = ExtResource("7_sg514")
+texture_normal = ExtResource("19_xvymk")
 texture_disabled = ExtResource("3_fmtt3")
 ignore_texture_size = true
 stretch_mode = 4
