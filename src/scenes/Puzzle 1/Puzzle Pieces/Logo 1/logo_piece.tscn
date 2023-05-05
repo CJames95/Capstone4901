@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://f2b2mwymxc1u"]
+
+[ext_resource type="Script" path="res://src/scripts/Puzzle 1/Puzzle Pieces/Logo/logo_piece.gd" id="1_jsm8w"]
+[ext_resource type="Texture2D" uid="uid://tsykiqdc3m73" path="res://src/art/Main and Puzzle Select/Puzzle 1/Puzzle Pieces/Puzzle1_Logo.png" id="2_jfbc7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4ejex"]
+size = Vector2(610, 610)
+
+[node name="Logo Piece" type="Node2D"]
+script = ExtResource("1_jsm8w")
+
+[node name="Logo" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_jfbc7")
+
+[node name="Area2D" type="Area2D" parent="Logo"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Logo/Area2D"]
+shape = SubResource("RectangleShape2D_4ejex")
+
+[connection signal="input_event" from="Logo/Area2D" to="." method="_on_area_2d_input_event"]
