@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://c8ofc8heeilta"]
+[gd_scene load_steps=36 format=3 uid="uid://c8ofc8heeilta"]
 
 [ext_resource type="Script" path="res://src/scripts/puzzle_scene.gd" id="1_pf80t"]
 [ext_resource type="Texture2D" uid="uid://bkgmw5t75fd45" path="res://src/art/Main and Puzzle Select/Puzzle 1/Puzzle Elements.png" id="2_jumue"]
@@ -25,10 +25,15 @@
 [ext_resource type="Texture2D" uid="uid://gd0qcemqdlii" path="res://src/art/Main and Puzzle Select/Puzzle 1/InfoBtn_Normal.png" id="21_k7rdu"]
 [ext_resource type="Texture2D" uid="uid://wa262r6jtxsi" path="res://src/art/Main and Puzzle Select/Puzzle 1/InfoBtn_Clicked.png" id="22_6hy2r"]
 [ext_resource type="Texture2D" uid="uid://rxwacwm75vg5" path="res://src/art/Main and Puzzle Select/Puzzle 1/InfoBtn_Selected.png" id="23_d6x50"]
-[ext_resource type="PackedScene" uid="uid://bhlt8k8851465" path="res://src/scenes/search_grab_zone.tscn" id="25_le2q2"]
 [ext_resource type="Texture2D" uid="uid://btafu8sdwcfgt" path="res://src/art/slot.png" id="26_kae81"]
-[ext_resource type="Script" path="res://src/scripts/logo_grab_zone.gd" id="27_k0qnw"]
+[ext_resource type="PackedScene" uid="uid://bhlt8k8851465" path="res://src/scenes/Puzzle 1/Puzzle Pieces/Searchbar 1/search_grab_zone.tscn" id="26_ukrtn"]
+[ext_resource type="PackedScene" uid="uid://dbxv8m6hsipm5" path="res://src/scenes/Puzzle 1/Puzzle Pieces/Searchbar 2/searchbar2_grab_zone.tscn" id="27_5qkgo"]
+[ext_resource type="Script" path="res://src/scripts/Puzzle 1/Puzzle Pieces/Logo/logo_grab_zone.gd" id="28_d7lma"]
+[ext_resource type="PackedScene" uid="uid://cha1mn8xvpmxt" path="res://src/scenes/Puzzle 1/Puzzle Pieces/Searchbar 3/searchbar3_grab_zone.tscn" id="28_xs3s5"]
 [ext_resource type="Texture2D" uid="uid://tsykiqdc3m73" path="res://src/art/Main and Puzzle Select/Puzzle 1/Puzzle Pieces/Puzzle1_Logo.png" id="29_i2i2q"]
+[ext_resource type="PackedScene" uid="uid://cb152brx3j325" path="res://src/scenes/Puzzle 1/Puzzle Pieces/Bookmark 1/bookmark_tray.tscn" id="32_3ifsf"]
+[ext_resource type="PackedScene" uid="uid://cciterwdmtl46" path="res://src/scenes/Puzzle 1/Puzzle Pieces/Help Button 1/help1_tray.tscn" id="33_tl77q"]
+[ext_resource type="PackedScene" uid="uid://dedkl2u2wpngo" path="res://src/scenes/Puzzle 1/Puzzle Pieces/Logo Name 1/logo_name1_tray.tscn" id="34_orhw4"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_k8djf"]
 radius = 60.0
@@ -205,7 +210,15 @@ vertical_scroll_mode = 2
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Slot" parent="UI Tray/Vertical Box Container" instance=ExtResource("25_le2q2")]
+[node name="Searchbar1 Slot" parent="UI Tray/Vertical Box Container" instance=ExtResource("26_ukrtn")]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Searchbar2 Slot" parent="UI Tray/Vertical Box Container" instance=ExtResource("27_5qkgo")]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Searchbar3 Slot" parent="UI Tray/Vertical Box Container" instance=ExtResource("28_xs3s5")]
 layout_mode = 2
 size_flags_horizontal = 4
 
@@ -213,7 +226,7 @@ size_flags_horizontal = 4
 layout_mode = 2
 size_flags_horizontal = 4
 texture = ExtResource("26_kae81")
-script = ExtResource("27_k0qnw")
+script = ExtResource("28_d7lma")
 
 [node name="Small Logo" type="TextureRect" parent="UI Tray/Vertical Box Container/Logo"]
 layout_mode = 1
@@ -238,47 +251,17 @@ position = Vector2(128, 64)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_k8djf")
 
-[node name="Slot 3" type="TextureRect" parent="UI Tray/Vertical Box Container"]
-visible = false
+[node name="Bookmark1 Slot" parent="UI Tray/Vertical Box Container" instance=ExtResource("32_3ifsf")]
 layout_mode = 2
 size_flags_horizontal = 4
-texture = ExtResource("26_kae81")
 
-[node name="Slot 4" type="TextureRect" parent="UI Tray/Vertical Box Container"]
-visible = false
+[node name="Help1 Slot" parent="UI Tray/Vertical Box Container" instance=ExtResource("33_tl77q")]
 layout_mode = 2
 size_flags_horizontal = 4
-texture = ExtResource("26_kae81")
 
-[node name="Slot 5" type="TextureRect" parent="UI Tray/Vertical Box Container"]
-visible = false
+[node name="Logo Name1 Slot" parent="UI Tray/Vertical Box Container" instance=ExtResource("34_orhw4")]
 layout_mode = 2
 size_flags_horizontal = 4
-texture = ExtResource("26_kae81")
-
-[node name="Slot 6" type="TextureRect" parent="UI Tray/Vertical Box Container"]
-visible = false
-layout_mode = 2
-size_flags_horizontal = 4
-texture = ExtResource("26_kae81")
-
-[node name="Slot 7" type="TextureRect" parent="UI Tray/Vertical Box Container"]
-visible = false
-layout_mode = 2
-size_flags_horizontal = 4
-texture = ExtResource("26_kae81")
-
-[node name="Slot 8" type="TextureRect" parent="UI Tray/Vertical Box Container"]
-visible = false
-layout_mode = 2
-size_flags_horizontal = 4
-texture = ExtResource("26_kae81")
-
-[node name="Slot 9" type="TextureRect" parent="UI Tray/Vertical Box Container"]
-visible = false
-layout_mode = 2
-size_flags_horizontal = 4
-texture = ExtResource("26_kae81")
 
 [node name="Workspace" type="Node" parent="."]
 
