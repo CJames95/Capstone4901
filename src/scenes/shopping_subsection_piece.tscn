@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://31pbvuo6gijw"]
+
+[ext_resource type="Script" path="res://src/scripts/shopping_subsection_piece.gd" id="1_42bq5"]
+[ext_resource type="Texture2D" uid="uid://cvgk3uub8vloo" path="res://src/art/Main and Puzzle Select/Puzzle 2/Shopping Subsection.png" id="2_sbnlx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4ejex"]
+size = Vector2(2752, 3968)
+
+[node name="Shopping Subsection Piece" type="Node2D"]
+scale = Vector2(0.25, 0.25)
+script = ExtResource("1_42bq5")
+
+[node name="Shopping Subsection" type="Sprite2D" parent="."]
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("2_sbnlx")
+
+[node name="Area2D" type="Area2D" parent="Shopping Subsection"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Shopping Subsection/Area2D"]
+position = Vector2(-2.66668, -5.33332)
+scale = Vector2(0.25, 0.25)
+shape = SubResource("RectangleShape2D_4ejex")
+
+[connection signal="input_event" from="Shopping Subsection/Area2D" to="." method="_on_area_2d_input_event"]

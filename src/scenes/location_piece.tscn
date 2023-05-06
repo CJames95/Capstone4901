@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://cjtgty8efrjao"]
+
+[ext_resource type="Script" path="res://src/scripts/location_piece.gd" id="1_eujhf"]
+[ext_resource type="Texture2D" uid="uid://cjm6ur0fqvyer" path="res://src/art/Main and Puzzle Select/Puzzle 2/Location.png" id="2_u0l2k"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4ejex"]
+size = Vector2(13824, 1848)
+
+[node name="Location Piece" type="Node2D"]
+scale = Vector2(0.25, 0.25)
+script = ExtResource("1_eujhf")
+
+[node name="Location" type="Sprite2D" parent="."]
+texture = ExtResource("2_u0l2k")
+
+[node name="Area2D" type="Area2D" parent="Location"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Location/Area2D"]
+position = Vector2(4, -7)
+scale = Vector2(0.25, 0.25)
+shape = SubResource("RectangleShape2D_4ejex")
+
+[connection signal="input_event" from="Location/Area2D" to="." method="_on_area_2d_input_event"]

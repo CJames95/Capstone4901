@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://bdqd8yibmeh58"]
+
+[ext_resource type="Script" path="res://src/scripts/shopping_bag_piece.gd" id="1_hu3rp"]
+[ext_resource type="Texture2D" uid="uid://ci3qvsks5pivl" path="res://src/art/Main and Puzzle Select/Puzzle 2/Shopping Bag.png" id="2_rotux"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4ejex"]
+size = Vector2(384, 422.4)
+
+[node name="Shopping Bag Piece" type="Node2D"]
+scale = Vector2(0.25, 0.25)
+script = ExtResource("1_hu3rp")
+
+[node name="Shopping Bag" type="Sprite2D" parent="."]
+scale = Vector2(1.25, 1.25)
+texture = ExtResource("2_rotux")
+
+[node name="Area2D" type="Area2D" parent="Shopping Bag"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Shopping Bag/Area2D"]
+position = Vector2(-9.76562e-05, -1.6)
+scale = Vector2(0.25, 0.25)
+shape = SubResource("RectangleShape2D_4ejex")
+
+[connection signal="input_event" from="Shopping Bag/Area2D" to="." method="_on_area_2d_input_event"]

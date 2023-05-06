@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://cawvhffvr0h7p"]
+
+[ext_resource type="Script" path="res://src/scripts/shopping_section_piece.gd" id="1_p3fni"]
+[ext_resource type="Texture2D" uid="uid://cvnk7ehmeb0ax" path="res://src/art/Main and Puzzle Select/Puzzle 2/Shopping Section.png" id="2_x3p07"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4ejex"]
+size = Vector2(9920, 3936)
+
+[node name="Shopping Section Piece" type="Node2D"]
+scale = Vector2(0.25, 0.25)
+script = ExtResource("1_p3fni")
+
+[node name="Shopping Section" type="Sprite2D" parent="."]
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("2_x3p07")
+
+[node name="Area2D" type="Area2D" parent="Shopping Section"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Shopping Section/Area2D"]
+position = Vector2(-6.10352e-05, 4.00002)
+scale = Vector2(0.25, 0.25)
+shape = SubResource("RectangleShape2D_4ejex")
+
+[connection signal="input_event" from="Shopping Section/Area2D" to="." method="_on_area_2d_input_event"]

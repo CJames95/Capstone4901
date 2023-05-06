@@ -1,7 +1,7 @@
-[gd_scene load_steps=35 format=3 uid="uid://cfaiunm2kx1ph"]
+[gd_scene load_steps=46 format=3 uid="uid://cfaiunm2kx1ph"]
 
 [ext_resource type="Script" path="res://src/scripts/Puzzle 2/Puzzle2.gd" id="1_3gcu6"]
-[ext_resource type="Texture2D" uid="uid://cpyowiueotikd" path="res://src/art/Main and Puzzle Select/Puzzle Select/Puzzle_Select_Elements-1.png" id="2_yuwlo"]
+[ext_resource type="Texture2D" uid="uid://cpyowiueotikd" path="res://src/art/Main and Puzzle Select/Puzzle_Select_Elements-1.png" id="2_yuwlo"]
 [ext_resource type="Texture2D" uid="uid://telxoydmg7ye" path="res://src/art/Main and Puzzle Select/Puzzle 2/Puzzle 2 Indicator.png" id="3_hrruk"]
 [ext_resource type="Texture2D" uid="uid://cgqjij2g8o47i" path="res://src/art/Main and Puzzle Select/Puzzle 1/Puzzle_HomeBtn_Normal.png" id="4_gmqye"]
 [ext_resource type="Script" path="res://src/scripts/workspace.gd" id="4_qe1px"]
@@ -25,14 +25,25 @@
 [ext_resource type="Texture2D" uid="uid://c7rxemp8euioy" path="res://src/art/Main and Puzzle Select/Puzzle 1/RefreshBtn_Normal.png" id="22_g21yr"]
 [ext_resource type="Texture2D" uid="uid://c4jtrmbxiv6n1" path="res://src/art/Main and Puzzle Select/Puzzle 1/RefreshBtn_Clicked.png" id="23_mnvrr"]
 [ext_resource type="Texture2D" uid="uid://cafg38eegiwk8" path="res://src/art/Main and Puzzle Select/Puzzle 1/RefreshBtn_Selected.png" id="24_l3yfk"]
-[ext_resource type="PackedScene" uid="uid://bhlt8k8851465" path="res://src/scenes/search_grab_zone.tscn" id="26_6pado"]
+[ext_resource type="PackedScene" uid="uid://bhlt8k8851465" path="res://src/scenes/Puzzle 1/Puzzle Pieces/Searchbar 1/search_grab_zone.tscn" id="26_6pado"]
 [ext_resource type="Texture2D" uid="uid://btafu8sdwcfgt" path="res://src/art/slot.png" id="27_h3dm1"]
+[ext_resource type="Script" path="res://src/scripts/Puzzle 2/search_grab_zone.gd" id="27_tnn3g"]
 [ext_resource type="Script" path="res://src/scripts/account_grab_zone.gd" id="28_s8faf"]
 [ext_resource type="Texture2D" uid="uid://b5rt40hrgbk5p" path="res://src/art/Main and Puzzle Select/Puzzle 2/Account.png" id="29_n0x01"]
 [ext_resource type="Script" path="res://src/scripts/ad_section_grab_zone.gd" id="30_sh03j"]
 [ext_resource type="Texture2D" uid="uid://d2k2y3ydkg0oi" path="res://src/art/Main and Puzzle Select/Puzzle 2/Ad Section.png" id="31_8lqvp"]
 [ext_resource type="Texture2D" uid="uid://0dh86whwnbj6" path="res://src/art/Main and Puzzle Select/Puzzle 2/Category Bar.png" id="32_3o6f0"]
 [ext_resource type="Script" path="res://src/scripts/category_bar_grab_zone.gd" id="32_vx23i"]
+[ext_resource type="Script" path="res://src/scripts/location_grab_zone.gd" id="34_v6csn"]
+[ext_resource type="Texture2D" uid="uid://cjm6ur0fqvyer" path="res://src/art/Main and Puzzle Select/Puzzle 2/Location.png" id="35_3ui0q"]
+[ext_resource type="Script" path="res://src/scripts/sahara_grab_zone.gd" id="36_04pix"]
+[ext_resource type="Texture2D" uid="uid://bgcwf78ugm8l2" path="res://src/art/Main and Puzzle Select/Puzzle 2/Sahara.png" id="36_shblo"]
+[ext_resource type="Script" path="res://src/scripts/shopping_bag_grab_zone.gd" id="39_t4d3y"]
+[ext_resource type="Texture2D" uid="uid://ci3qvsks5pivl" path="res://src/art/Main and Puzzle Select/Puzzle 2/Shopping Bag.png" id="40_nys0o"]
+[ext_resource type="Script" path="res://src/scripts/shopping_section_grab_zone.gd" id="41_f1v0a"]
+[ext_resource type="Texture2D" uid="uid://cvnk7ehmeb0ax" path="res://src/art/Main and Puzzle Select/Puzzle 2/Shopping Section.png" id="41_t56h6"]
+[ext_resource type="Texture2D" uid="uid://cvgk3uub8vloo" path="res://src/art/Main and Puzzle Select/Puzzle 2/Shopping Subsection.png" id="42_duyro"]
+[ext_resource type="Script" path="res://src/scripts/shopping_subsection_grab_zone.gd" id="43_2jgsi"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_o48kp"]
 radius = 60.0
@@ -212,6 +223,7 @@ size_flags_horizontal = 3
 [node name="Slot" parent="UI Tray/Vertical Box Container" instance=ExtResource("26_6pado")]
 layout_mode = 2
 size_flags_horizontal = 4
+script = ExtResource("27_tnn3g")
 
 [node name="Account" type="TextureRect" parent="UI Tray/Vertical Box Container"]
 layout_mode = 2
@@ -300,6 +312,151 @@ position = Vector2(128, 64)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_o48kp")
 
+[node name="Location" type="TextureRect" parent="UI Tray/Vertical Box Container"]
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("27_h3dm1")
+script = ExtResource("34_v6csn")
+
+[node name="Small Location" type="TextureRect" parent="UI Tray/Vertical Box Container/Location"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -46.0
+offset_top = -46.0
+offset_right = 46.0
+offset_bottom = 46.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("35_3ui0q")
+expand_mode = 1
+
+[node name="Area2D" type="Area2D" parent="UI Tray/Vertical Box Container/Location"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="UI Tray/Vertical Box Container/Location/Area2D"]
+position = Vector2(128, 64)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_o48kp")
+
+[node name="Sahara" type="TextureRect" parent="UI Tray/Vertical Box Container"]
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("27_h3dm1")
+script = ExtResource("36_04pix")
+
+[node name="Small Sahara" type="TextureRect" parent="UI Tray/Vertical Box Container/Sahara"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -46.0
+offset_top = -46.0
+offset_right = 46.0
+offset_bottom = 46.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("36_shblo")
+expand_mode = 1
+
+[node name="Area2D" type="Area2D" parent="UI Tray/Vertical Box Container/Sahara"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="UI Tray/Vertical Box Container/Sahara/Area2D"]
+position = Vector2(128, 64)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_o48kp")
+
+[node name="Shopping Bag" type="TextureRect" parent="UI Tray/Vertical Box Container"]
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("27_h3dm1")
+script = ExtResource("39_t4d3y")
+
+[node name="Small Shopping Bag" type="TextureRect" parent="UI Tray/Vertical Box Container/Shopping Bag"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -46.0
+offset_top = -46.0
+offset_right = 46.0
+offset_bottom = 46.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("40_nys0o")
+expand_mode = 1
+
+[node name="Area2D" type="Area2D" parent="UI Tray/Vertical Box Container/Shopping Bag"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="UI Tray/Vertical Box Container/Shopping Bag/Area2D"]
+position = Vector2(128, 64)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_o48kp")
+
+[node name="Shopping Section" type="TextureRect" parent="UI Tray/Vertical Box Container"]
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("27_h3dm1")
+script = ExtResource("41_f1v0a")
+
+[node name="Small Shopping Section" type="TextureRect" parent="UI Tray/Vertical Box Container/Shopping Section"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -46.0
+offset_top = -46.0
+offset_right = 46.0
+offset_bottom = 46.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("41_t56h6")
+expand_mode = 1
+
+[node name="Area2D" type="Area2D" parent="UI Tray/Vertical Box Container/Shopping Section"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="UI Tray/Vertical Box Container/Shopping Section/Area2D"]
+position = Vector2(128, 64)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_o48kp")
+
+[node name="Shopping Subsection" type="TextureRect" parent="UI Tray/Vertical Box Container"]
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("27_h3dm1")
+script = ExtResource("43_2jgsi")
+
+[node name="Small Shopping Subsection" type="TextureRect" parent="UI Tray/Vertical Box Container/Shopping Subsection"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -46.0
+offset_top = -46.0
+offset_right = 46.0
+offset_bottom = 46.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("42_duyro")
+expand_mode = 1
+
+[node name="Area2D" type="Area2D" parent="UI Tray/Vertical Box Container/Shopping Subsection"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="UI Tray/Vertical Box Container/Shopping Subsection/Area2D"]
+position = Vector2(128, 64)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_o48kp")
+
 [node name="Slot 3" type="TextureRect" parent="UI Tray/Vertical Box Container"]
 visible = false
 layout_mode = 2
@@ -356,3 +513,18 @@ texture = ExtResource("27_h3dm1")
 [connection signal="area_shape_entered" from="UI Tray/Vertical Box Container/Category Bar/Area2D" to="UI Tray/Vertical Box Container/Category Bar" method="_on_area_2d_area_shape_entered"]
 [connection signal="area_shape_exited" from="UI Tray/Vertical Box Container/Category Bar/Area2D" to="UI Tray/Vertical Box Container/Category Bar" method="_on_area_2d_area_shape_exited"]
 [connection signal="input_event" from="UI Tray/Vertical Box Container/Category Bar/Area2D" to="UI Tray/Vertical Box Container/Category Bar" method="_on_area_2d_input_event"]
+[connection signal="area_shape_entered" from="UI Tray/Vertical Box Container/Location/Area2D" to="UI Tray/Vertical Box Container/Location" method="_on_area_2d_area_shape_entered"]
+[connection signal="area_shape_exited" from="UI Tray/Vertical Box Container/Location/Area2D" to="UI Tray/Vertical Box Container/Location" method="_on_area_2d_area_shape_exited"]
+[connection signal="input_event" from="UI Tray/Vertical Box Container/Location/Area2D" to="UI Tray/Vertical Box Container/Location" method="_on_area_2d_input_event"]
+[connection signal="area_shape_entered" from="UI Tray/Vertical Box Container/Sahara/Area2D" to="UI Tray/Vertical Box Container/Sahara" method="_on_area_2d_area_shape_entered"]
+[connection signal="area_shape_exited" from="UI Tray/Vertical Box Container/Sahara/Area2D" to="UI Tray/Vertical Box Container/Sahara" method="_on_area_2d_area_shape_exited"]
+[connection signal="input_event" from="UI Tray/Vertical Box Container/Sahara/Area2D" to="UI Tray/Vertical Box Container/Sahara" method="_on_area_2d_input_event"]
+[connection signal="area_shape_entered" from="UI Tray/Vertical Box Container/Shopping Bag/Area2D" to="UI Tray/Vertical Box Container/Shopping Bag" method="_on_area_2d_area_shape_entered"]
+[connection signal="area_shape_exited" from="UI Tray/Vertical Box Container/Shopping Bag/Area2D" to="UI Tray/Vertical Box Container/Shopping Bag" method="_on_area_2d_area_shape_exited"]
+[connection signal="input_event" from="UI Tray/Vertical Box Container/Shopping Bag/Area2D" to="UI Tray/Vertical Box Container/Shopping Bag" method="_on_area_2d_input_event"]
+[connection signal="area_shape_entered" from="UI Tray/Vertical Box Container/Shopping Section/Area2D" to="UI Tray/Vertical Box Container/Shopping Section" method="_on_area_2d_area_shape_entered"]
+[connection signal="area_shape_exited" from="UI Tray/Vertical Box Container/Shopping Section/Area2D" to="UI Tray/Vertical Box Container/Shopping Section" method="_on_area_2d_area_shape_exited"]
+[connection signal="input_event" from="UI Tray/Vertical Box Container/Shopping Section/Area2D" to="UI Tray/Vertical Box Container/Shopping Section" method="_on_area_2d_input_event"]
+[connection signal="area_shape_entered" from="UI Tray/Vertical Box Container/Shopping Subsection/Area2D" to="UI Tray/Vertical Box Container/Shopping Subsection" method="_on_area_2d_area_shape_entered"]
+[connection signal="area_shape_exited" from="UI Tray/Vertical Box Container/Shopping Subsection/Area2D" to="UI Tray/Vertical Box Container/Shopping Subsection" method="_on_area_2d_area_shape_exited"]
+[connection signal="input_event" from="UI Tray/Vertical Box Container/Shopping Subsection/Area2D" to="UI Tray/Vertical Box Container/Shopping Subsection" method="_on_area_2d_input_event"]
