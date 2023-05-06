@@ -1,9 +1,10 @@
-[gd_scene load_steps=25 format=3 uid="uid://dg6uul281t0im"]
+[gd_scene load_steps=35 format=3 uid="uid://cfaiunm2kx1ph"]
 
-[ext_resource type="Script" path="res://src/scripts/Puzzle 1/Puzzle1.gd" id="1_6uu2p"]
+[ext_resource type="Script" path="res://src/scripts/Puzzle 2/Puzzle2.gd" id="1_3gcu6"]
 [ext_resource type="Texture2D" uid="uid://cpyowiueotikd" path="res://src/art/Main and Puzzle Select/Puzzle Select/Puzzle_Select_Elements-1.png" id="2_yuwlo"]
 [ext_resource type="Texture2D" uid="uid://telxoydmg7ye" path="res://src/art/Main and Puzzle Select/Puzzle 2/Puzzle 2 Indicator.png" id="3_hrruk"]
 [ext_resource type="Texture2D" uid="uid://cgqjij2g8o47i" path="res://src/art/Main and Puzzle Select/Puzzle 1/Puzzle_HomeBtn_Normal.png" id="4_gmqye"]
+[ext_resource type="Script" path="res://src/scripts/workspace.gd" id="4_qe1px"]
 [ext_resource type="Texture2D" uid="uid://475uhstd1i6a" path="res://src/art/Main and Puzzle Select/Puzzle 1/Puzzle_HomeBtn_Clicked.png" id="5_mvti7"]
 [ext_resource type="Texture2D" uid="uid://du3kls6hqnyjt" path="res://src/art/Main and Puzzle Select/Puzzle 1/Puzzle_HomeBtn_Selected.png" id="6_87p1y"]
 [ext_resource type="Texture2D" uid="uid://fuwbcduqwn3y" path="res://src/art/Main and Puzzle Select/Puzzle 1/Puzzle_ConfirmBtn_Normal.png" id="7_sw0el"]
@@ -24,18 +25,23 @@
 [ext_resource type="Texture2D" uid="uid://c7rxemp8euioy" path="res://src/art/Main and Puzzle Select/Puzzle 1/RefreshBtn_Normal.png" id="22_g21yr"]
 [ext_resource type="Texture2D" uid="uid://c4jtrmbxiv6n1" path="res://src/art/Main and Puzzle Select/Puzzle 1/RefreshBtn_Clicked.png" id="23_mnvrr"]
 [ext_resource type="Texture2D" uid="uid://cafg38eegiwk8" path="res://src/art/Main and Puzzle Select/Puzzle 1/RefreshBtn_Selected.png" id="24_l3yfk"]
+[ext_resource type="PackedScene" uid="uid://bhlt8k8851465" path="res://src/scenes/search_grab_zone.tscn" id="26_6pado"]
+[ext_resource type="Texture2D" uid="uid://btafu8sdwcfgt" path="res://src/art/slot.png" id="27_h3dm1"]
+[ext_resource type="Script" path="res://src/scripts/account_grab_zone.gd" id="28_s8faf"]
+[ext_resource type="Texture2D" uid="uid://b5rt40hrgbk5p" path="res://src/art/Main and Puzzle Select/Puzzle 2/Account.png" id="29_n0x01"]
+[ext_resource type="Script" path="res://src/scripts/ad_section_grab_zone.gd" id="30_sh03j"]
+[ext_resource type="Texture2D" uid="uid://d2k2y3ydkg0oi" path="res://src/art/Main and Puzzle Select/Puzzle 2/Ad Section.png" id="31_8lqvp"]
+[ext_resource type="Texture2D" uid="uid://0dh86whwnbj6" path="res://src/art/Main and Puzzle Select/Puzzle 2/Category Bar.png" id="32_3o6f0"]
+[ext_resource type="Script" path="res://src/scripts/category_bar_grab_zone.gd" id="32_vx23i"]
 
-[node name="Puzzle2" type="Control"]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-script = ExtResource("1_6uu2p")
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_o48kp"]
+radius = 60.0
+height = 248.0
+
+[node name="Puzzle2" type="Node"]
+script = ExtResource("1_3gcu6")
 
 [node name="Background" type="TextureRect" parent="."]
-layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -45,7 +51,6 @@ texture = ExtResource("2_yuwlo")
 expand_mode = 1
 
 [node name="WebTemplate" type="TextureRect" parent="."]
-layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -55,9 +60,23 @@ texture = ExtResource("3_hrruk")
 expand_mode = 1
 stretch_mode = 4
 
+[node name="Container" type="Container" parent="WebTemplate"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -891.0
+offset_top = -848.0
+offset_right = 509.0
+offset_bottom = -68.0
+grow_horizontal = 2
+grow_vertical = 0
+script = ExtResource("4_qe1px")
+
 [node name="Home_Confirm_Btn" type="MarginContainer" parent="."]
 custom_minimum_size = Vector2(100, 1)
-layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -95,7 +114,6 @@ ignore_texture_size = true
 stretch_mode = 4
 
 [node name="Info_Container" type="MarginContainer" parent="."]
-layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -136,7 +154,6 @@ ignore_texture_size = true
 stretch_mode = 4
 
 [node name="Edit_Container" type="MarginContainer" parent="."]
-layout_mode = 2
 offset_left = 251.0
 offset_top = 146.0
 offset_right = 438.0
@@ -179,6 +196,163 @@ texture_hover = ExtResource("24_l3yfk")
 ignore_texture_size = true
 stretch_mode = 4
 
+[node name="UI Tray" type="ScrollContainer" parent="."]
+offset_left = 1541.0
+offset_top = 53.0
+offset_right = 1880.0
+offset_bottom = 935.0
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.15
+vertical_scroll_mode = 2
+
+[node name="Vertical Box Container" type="VBoxContainer" parent="UI Tray"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Slot" parent="UI Tray/Vertical Box Container" instance=ExtResource("26_6pado")]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Account" type="TextureRect" parent="UI Tray/Vertical Box Container"]
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("27_h3dm1")
+script = ExtResource("28_s8faf")
+
+[node name="Small Account" type="TextureRect" parent="UI Tray/Vertical Box Container/Account"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -46.0
+offset_top = -46.0
+offset_right = 46.0
+offset_bottom = 46.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("29_n0x01")
+expand_mode = 1
+
+[node name="Area2D" type="Area2D" parent="UI Tray/Vertical Box Container/Account"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="UI Tray/Vertical Box Container/Account/Area2D"]
+position = Vector2(128, 64)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_o48kp")
+
+[node name="Ad section" type="TextureRect" parent="UI Tray/Vertical Box Container"]
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("27_h3dm1")
+script = ExtResource("30_sh03j")
+
+[node name="Small Ad section" type="TextureRect" parent="UI Tray/Vertical Box Container/Ad section"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -46.0
+offset_top = -46.0
+offset_right = 46.0
+offset_bottom = 46.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("31_8lqvp")
+expand_mode = 1
+
+[node name="Area2D" type="Area2D" parent="UI Tray/Vertical Box Container/Ad section"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="UI Tray/Vertical Box Container/Ad section/Area2D"]
+position = Vector2(128, 64)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_o48kp")
+
+[node name="Category Bar" type="TextureRect" parent="UI Tray/Vertical Box Container"]
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("27_h3dm1")
+script = ExtResource("32_vx23i")
+
+[node name="Small Category Bar" type="TextureRect" parent="UI Tray/Vertical Box Container/Category Bar"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -46.0
+offset_top = -46.0
+offset_right = 46.0
+offset_bottom = 46.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("32_3o6f0")
+expand_mode = 1
+
+[node name="Area2D" type="Area2D" parent="UI Tray/Vertical Box Container/Category Bar"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="UI Tray/Vertical Box Container/Category Bar/Area2D"]
+position = Vector2(128, 64)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_o48kp")
+
+[node name="Slot 3" type="TextureRect" parent="UI Tray/Vertical Box Container"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("27_h3dm1")
+
+[node name="Slot 4" type="TextureRect" parent="UI Tray/Vertical Box Container"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("27_h3dm1")
+
+[node name="Slot 5" type="TextureRect" parent="UI Tray/Vertical Box Container"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("27_h3dm1")
+
+[node name="Slot 6" type="TextureRect" parent="UI Tray/Vertical Box Container"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("27_h3dm1")
+
+[node name="Slot 7" type="TextureRect" parent="UI Tray/Vertical Box Container"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("27_h3dm1")
+
+[node name="Slot 8" type="TextureRect" parent="UI Tray/Vertical Box Container"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("27_h3dm1")
+
+[node name="Slot 9" type="TextureRect" parent="UI Tray/Vertical Box Container"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("27_h3dm1")
+
+[node name="Workspace" type="Node" parent="."]
+
 [connection signal="pressed" from="Home_Confirm_Btn/GridContainer/HomeBtn" to="." method="_on_home_btn_pressed"]
 [connection signal="pressed" from="Home_Confirm_Btn/GridContainer/ConfirmBtn" to="." method="_on_confirm_btn_pressed"]
 [connection signal="pressed" from="Info_Container/InfoHintContainer/InfoBtn" to="." method="_on_info_btn_pressed"]
+[connection signal="area_shape_entered" from="UI Tray/Vertical Box Container/Account/Area2D" to="UI Tray/Vertical Box Container/Account" method="_on_area_2d_area_shape_entered"]
+[connection signal="area_shape_exited" from="UI Tray/Vertical Box Container/Account/Area2D" to="UI Tray/Vertical Box Container/Account" method="_on_area_2d_area_shape_exited"]
+[connection signal="input_event" from="UI Tray/Vertical Box Container/Account/Area2D" to="UI Tray/Vertical Box Container/Account" method="_on_area_2d_input_event"]
+[connection signal="area_shape_entered" from="UI Tray/Vertical Box Container/Ad section/Area2D" to="UI Tray/Vertical Box Container/Ad section" method="_on_area_2d_area_shape_entered"]
+[connection signal="area_shape_exited" from="UI Tray/Vertical Box Container/Ad section/Area2D" to="UI Tray/Vertical Box Container/Ad section" method="_on_area_2d_area_shape_exited"]
+[connection signal="input_event" from="UI Tray/Vertical Box Container/Ad section/Area2D" to="UI Tray/Vertical Box Container/Ad section" method="_on_area_2d_input_event"]
+[connection signal="area_shape_entered" from="UI Tray/Vertical Box Container/Category Bar/Area2D" to="UI Tray/Vertical Box Container/Category Bar" method="_on_area_2d_area_shape_entered"]
+[connection signal="area_shape_exited" from="UI Tray/Vertical Box Container/Category Bar/Area2D" to="UI Tray/Vertical Box Container/Category Bar" method="_on_area_2d_area_shape_exited"]
+[connection signal="input_event" from="UI Tray/Vertical Box Container/Category Bar/Area2D" to="UI Tray/Vertical Box Container/Category Bar" method="_on_area_2d_input_event"]

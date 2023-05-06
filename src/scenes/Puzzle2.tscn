@@ -1,0 +1,404 @@
+[gd_scene load_steps=32 format=3 uid="uid://bsp0sx0wtdv43"]
+
+[ext_resource type="Script" path="res://src/scripts/puzzle_scene.gd" id="1_wtvk2"]
+[ext_resource type="Texture2D" uid="uid://cpyowiueotikd" path="res://src/art/Main and Puzzle Select/Puzzle Select/Puzzle_Select_Elements-1.png" id="2_cwli5"]
+[ext_resource type="Texture2D" uid="uid://bkgmw5t75fd45" path="res://src/art/Main and Puzzle Select/Puzzle 1/Puzzle Elements.png" id="3_18w0l"]
+[ext_resource type="Script" path="res://src/scripts/workspace.gd" id="4_ggntk"]
+[ext_resource type="Texture2D" uid="uid://cgqjij2g8o47i" path="res://src/art/Main and Puzzle Select/Puzzle 1/Puzzle_HomeBtn_Normal.png" id="5_crt0c"]
+[ext_resource type="Texture2D" uid="uid://475uhstd1i6a" path="res://src/art/Main and Puzzle Select/Puzzle 1/Puzzle_HomeBtn_Clicked.png" id="6_s2o7r"]
+[ext_resource type="Texture2D" uid="uid://du3kls6hqnyjt" path="res://src/art/Main and Puzzle Select/Puzzle 1/Puzzle_HomeBtn_Selected.png" id="7_2g5t5"]
+[ext_resource type="Texture2D" uid="uid://fuwbcduqwn3y" path="res://src/art/Main and Puzzle Select/Puzzle 1/Puzzle_ConfirmBtn_Normal.png" id="8_1o833"]
+[ext_resource type="Texture2D" uid="uid://hsy0x5k6md1t" path="res://src/art/Main and Puzzle Select/Puzzle 1/Puzzle_ConfirmBtn_Clicked.png" id="9_1rdrh"]
+[ext_resource type="Texture2D" uid="uid://c60a1ysuwtits" path="res://src/art/Main and Puzzle Select/Puzzle 1/Puzzle_ConfirmBtn_Selected.png" id="10_jjly6"]
+[ext_resource type="Texture2D" uid="uid://gd0qcemqdlii" path="res://src/art/Main and Puzzle Select/Puzzle 1/InfoBtn_Normal.png" id="11_uib5n"]
+[ext_resource type="Texture2D" uid="uid://wa262r6jtxsi" path="res://src/art/Main and Puzzle Select/Puzzle 1/InfoBtn_Clicked.png" id="12_y0yah"]
+[ext_resource type="Texture2D" uid="uid://rxwacwm75vg5" path="res://src/art/Main and Puzzle Select/Puzzle 1/InfoBtn_Selected.png" id="13_6pj71"]
+[ext_resource type="Texture2D" uid="uid://cn17xogji8mmu" path="res://src/art/Main and Puzzle Select/Puzzle 1/HintBtn_Normal.png" id="14_yyliu"]
+[ext_resource type="Texture2D" uid="uid://dc7v14y7n0j45" path="res://src/art/Main and Puzzle Select/Puzzle 1/HintBtn_Clicked.png" id="15_wcafb"]
+[ext_resource type="Texture2D" uid="uid://k3jaoylpso1q" path="res://src/art/Main and Puzzle Select/Puzzle 1/HintBtn_Selected.png" id="16_rdo6u"]
+[ext_resource type="Texture2D" uid="uid://cmp1nlgjpx3fv" path="res://src/art/Main and Puzzle Select/Puzzle 1/UndoBtn_Normal.png" id="17_mt545"]
+[ext_resource type="Texture2D" uid="uid://cr0xq7frplu8l" path="res://src/art/Main and Puzzle Select/Puzzle 1/UndoBtn_Clicked.png" id="18_s6nr3"]
+[ext_resource type="Texture2D" uid="uid://bdrqdfwqi23wc" path="res://src/art/Main and Puzzle Select/Puzzle 1/UndoBtn_Selected.png" id="19_h1ti1"]
+[ext_resource type="Texture2D" uid="uid://q5bgyubyxf20" path="res://src/art/Main and Puzzle Select/Puzzle 1/RedoBtn_Normal.png" id="20_l7rsp"]
+[ext_resource type="Texture2D" uid="uid://b4wk3y71qgni1" path="res://src/art/Main and Puzzle Select/Puzzle 1/RedoBtn_Clicked.png" id="21_8wn6f"]
+[ext_resource type="Texture2D" uid="uid://bdhtfj0nyogas" path="res://src/art/Main and Puzzle Select/Puzzle 1/RedoBtn_Selected.png" id="22_chnor"]
+[ext_resource type="Texture2D" uid="uid://c7rxemp8euioy" path="res://src/art/Main and Puzzle Select/Puzzle 1/RefreshBtn_Normal.png" id="23_tjapn"]
+[ext_resource type="Texture2D" uid="uid://c4jtrmbxiv6n1" path="res://src/art/Main and Puzzle Select/Puzzle 1/RefreshBtn_Clicked.png" id="24_5856o"]
+[ext_resource type="Texture2D" uid="uid://cafg38eegiwk8" path="res://src/art/Main and Puzzle Select/Puzzle 1/RefreshBtn_Selected.png" id="25_opnu1"]
+[ext_resource type="PackedScene" uid="uid://bhlt8k8851465" path="res://src/scenes/search_grab_zone.tscn" id="26_6c365"]
+[ext_resource type="Texture2D" uid="uid://btafu8sdwcfgt" path="res://src/art/slot.png" id="27_o34bh"]
+[ext_resource type="Script" path="res://src/scripts/logo_grab_zone.gd" id="28_f6eij"]
+[ext_resource type="Texture2D" uid="uid://tsykiqdc3m73" path="res://src/art/Main and Puzzle Select/Puzzle 1/Puzzle Pieces/Puzzle1_Logo.png" id="29_ll4k8"]
+
+[sub_resource type="GDScript" id="GDScript_g0qyu"]
+script/source = "extends TextureRect
+
+var searchbar = preload(\"res://src/scenes/searchbar_piece.tscn\")
+var root_scene
+var searchbar_icon_node
+var searchbar_instance
+var made_instance = false
+var area_entered = false
+
+# Called when the node enters the scene tree for the first time.
+# In this function root_scene is established as the node that contains the
+# hint box and the browser, searchbar_instance creates and instance of the
+# searchbar_piece scene, and searchbar_icon_node is established as the node
+# that shows the little searchbar icon in this scene.
+func _ready():
+	root_scene = get_node(\"/root/Puzzle1/Workspace\")
+	searchbar_instance = searchbar.instantiate()
+	searchbar_icon_node = get_node(\"Searchbar Icon\")
+
+# Called when something in the Area2D emits input of some type.
+# If the input is a click and no searchbar has been made yet,
+# then create a searchbar and place it in the root_scene node as a
+# child. Then hide the Searchbar_Icon node. Otherwise if the click has been 
+# released on the area, check to see if an object is in the area and a searchbar
+# exists, then destroy the child and show the Searchbar_Icon node.
+func _on_area_2d_input_event(viewport, event, shape_idx):
+	if Input.is_action_just_pressed(\"click\"):
+		if made_instance == false:
+			made_instance = true
+			root_scene.add_child(searchbar_instance)
+			searchbar_icon_node.hide()
+			searchbar_instance.position = get_global_mouse_position()
+	if Input.is_action_just_released(\"click\"):
+		if made_instance == true and area_entered == true:
+			made_instance = false
+			root_scene.remove_child(searchbar_instance)
+			searchbar_icon_node.show()
+			searchbar_instance.delete_instance()
+	if Input.is_action_just_pressed(\"R\") or Input.is_action_pressed(\"R\"):
+		if made_instance == true:
+			made_instance = false
+			root_scene.remove_child(searchbar_instance)
+			searchbar_icon_node.show()
+			searchbar_instance.delete_instance()
+# Called if an object enters the area of Area2D.
+# If an object enters, switch area_entered to true.
+func _on_area_2d_area_shape_entered(area_rid, area, area_shape_index, local_shape_index):
+	area_entered = true
+	
+# Called if an object leaves the area of Area2D.
+# If an object leaves, switch area_entered to false.
+func _on_area_2d_area_shape_exited(area_rid, area, area_shape_index, local_shape_index):
+	area_entered = false
+"
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_k8djf"]
+radius = 60.0
+height = 248.0
+
+[node name="Puzzle1" type="Node"]
+script = ExtResource("1_wtvk2")
+
+[node name="Background" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_cwli5")
+expand_mode = 1
+
+[node name="WebTemplate" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_18w0l")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="Container" type="Container" parent="WebTemplate"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -891.0
+offset_top = -848.0
+offset_right = 509.0
+offset_bottom = -68.0
+grow_horizontal = 2
+grow_vertical = 0
+script = ExtResource("4_ggntk")
+
+[node name="Home_Confirm_Btn" type="MarginContainer" parent="."]
+custom_minimum_size = Vector2(100, 1)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1538.0
+offset_top = 959.0
+offset_right = -35.0
+offset_bottom = -3.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GridContainer" type="GridContainer" parent="Home_Confirm_Btn"]
+layout_mode = 2
+columns = 2
+
+[node name="HomeBtn" type="TextureButton" parent="Home_Confirm_Btn/GridContainer"]
+custom_minimum_size = Vector2(175, 75)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+texture_normal = ExtResource("5_crt0c")
+texture_pressed = ExtResource("6_s2o7r")
+texture_hover = ExtResource("7_2g5t5")
+ignore_texture_size = true
+stretch_mode = 4
+
+[node name="ConfirmBtn" type="TextureButton" parent="Home_Confirm_Btn/GridContainer"]
+custom_minimum_size = Vector2(175, 75)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+texture_normal = ExtResource("8_1o833")
+texture_pressed = ExtResource("9_1rdrh")
+texture_hover = ExtResource("10_jjly6")
+ignore_texture_size = true
+stretch_mode = 4
+
+[node name="Info_Container" type="MarginContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1324.0
+offset_top = 141.0
+offset_right = -459.0
+offset_bottom = -871.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="InfoHintContainer" type="GridContainer" parent="Info_Container"]
+clip_contents = true
+layout_direction = 3
+layout_mode = 2
+columns = 2
+
+[node name="InfoBtn" type="TextureButton" parent="Info_Container/InfoHintContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+texture_normal = ExtResource("11_uib5n")
+texture_pressed = ExtResource("12_y0yah")
+texture_hover = ExtResource("13_6pj71")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="HintBtn" type="TextureButton" parent="Info_Container/InfoHintContainer"]
+clip_contents = true
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+texture_normal = ExtResource("14_yyliu")
+texture_pressed = ExtResource("15_wcafb")
+texture_hover = ExtResource("16_rdo6u")
+ignore_texture_size = true
+stretch_mode = 4
+
+[node name="Edit_Container" type="MarginContainer" parent="."]
+offset_left = 251.0
+offset_top = 146.0
+offset_right = 438.0
+offset_bottom = 210.0
+
+[node name="GridContainer" type="GridContainer" parent="Edit_Container"]
+layout_mode = 2
+columns = 3
+
+[node name="UndoBtn" type="TextureButton" parent="Edit_Container/GridContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+texture_normal = ExtResource("17_mt545")
+texture_pressed = ExtResource("18_s6nr3")
+texture_hover = ExtResource("19_h1ti1")
+ignore_texture_size = true
+stretch_mode = 4
+
+[node name="RedoBtn" type="TextureButton" parent="Edit_Container/GridContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+texture_normal = ExtResource("20_l7rsp")
+texture_pressed = ExtResource("21_8wn6f")
+texture_hover = ExtResource("22_chnor")
+ignore_texture_size = true
+stretch_mode = 4
+
+[node name="RefreshBtn" type="TextureButton" parent="Edit_Container/GridContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+texture_normal = ExtResource("23_tjapn")
+texture_pressed = ExtResource("24_5856o")
+texture_hover = ExtResource("25_opnu1")
+ignore_texture_size = true
+stretch_mode = 4
+
+[node name="UI Tray" type="ScrollContainer" parent="."]
+offset_left = 1541.0
+offset_top = 53.0
+offset_right = 1880.0
+offset_bottom = 935.0
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.15
+vertical_scroll_mode = 2
+
+[node name="Vertical Box Container" type="VBoxContainer" parent="UI Tray"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Slot" parent="UI Tray/Vertical Box Container" instance=ExtResource("26_6c365")]
+layout_mode = 2
+size_flags_horizontal = 4
+script = SubResource("GDScript_g0qyu")
+
+[node name="Logo" type="TextureRect" parent="UI Tray/Vertical Box Container"]
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("27_o34bh")
+script = ExtResource("28_f6eij")
+
+[node name="Small Logo" type="TextureRect" parent="UI Tray/Vertical Box Container/Logo"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -46.0
+offset_top = -46.0
+offset_right = 46.0
+offset_bottom = 46.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("29_ll4k8")
+expand_mode = 1
+
+[node name="Area2D" type="Area2D" parent="UI Tray/Vertical Box Container/Logo"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="UI Tray/Vertical Box Container/Logo/Area2D"]
+position = Vector2(128, 64)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_k8djf")
+
+[node name="Slot 3" type="TextureRect" parent="UI Tray/Vertical Box Container"]
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("27_o34bh")
+
+[node name="Slot 4" type="TextureRect" parent="UI Tray/Vertical Box Container"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("27_o34bh")
+
+[node name="Slot 5" type="TextureRect" parent="UI Tray/Vertical Box Container"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("27_o34bh")
+
+[node name="Slot 6" type="TextureRect" parent="UI Tray/Vertical Box Container"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("27_o34bh")
+
+[node name="Slot 7" type="TextureRect" parent="UI Tray/Vertical Box Container"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("27_o34bh")
+
+[node name="Slot 8" type="TextureRect" parent="UI Tray/Vertical Box Container"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("27_o34bh")
+
+[node name="Slot 9" type="TextureRect" parent="UI Tray/Vertical Box Container"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("27_o34bh")
+
+[node name="Workspace" type="Node" parent="."]
+
+[node name="End Puzzle Confirmation" type="SubViewportContainer" parent="."]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -128.0
+offset_top = -64.0
+offset_right = 128.0
+offset_bottom = 64.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="End Puzzle Confirmation Viewport" type="SubViewport" parent="End Puzzle Confirmation"]
+handle_input_locally = false
+size = Vector2i(256, 128)
+render_target_update_mode = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="End Puzzle Confirmation/End Puzzle Confirmation Viewport"]
+custom_minimum_size = Vector2(0, 96)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -98.0
+offset_top = -20.0
+offset_right = 98.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="RichTextLabel" type="RichTextLabel" parent="End Puzzle Confirmation/End Puzzle Confirmation Viewport/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+bbcode_enabled = true
+text = "[center]Are you sure you want to finish this puzzle?[/center]"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="End Puzzle Confirmation/End Puzzle Confirmation Viewport/VBoxContainer"]
+layout_mode = 2
+
+[node name="Yes" type="Button" parent="End Puzzle Confirmation/End Puzzle Confirmation Viewport/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Yes"
+
+[node name="No" type="Button" parent="End Puzzle Confirmation/End Puzzle Confirmation Viewport/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "No"
+
+[connection signal="pressed" from="Home_Confirm_Btn/GridContainer/HomeBtn" to="." method="_on_home_btn_pressed"]
+[connection signal="pressed" from="Home_Confirm_Btn/GridContainer/ConfirmBtn" to="." method="_on_confirm_btn_pressed"]
+[connection signal="pressed" from="Info_Container/InfoHintContainer/InfoBtn" to="." method="_on_info_btn_pressed"]
+[connection signal="area_shape_entered" from="UI Tray/Vertical Box Container/Logo/Area2D" to="UI Tray/Vertical Box Container/Logo" method="_on_area_2d_area_shape_entered"]
+[connection signal="area_shape_exited" from="UI Tray/Vertical Box Container/Logo/Area2D" to="UI Tray/Vertical Box Container/Logo" method="_on_area_2d_area_shape_exited"]
+[connection signal="input_event" from="UI Tray/Vertical Box Container/Logo/Area2D" to="UI Tray/Vertical Box Container/Logo" method="_on_area_2d_input_event"]
+[connection signal="button_down" from="End Puzzle Confirmation/End Puzzle Confirmation Viewport/VBoxContainer/HBoxContainer/Yes" to="." method="_on_yes_button_down"]
+[connection signal="button_down" from="End Puzzle Confirmation/End Puzzle Confirmation Viewport/VBoxContainer/HBoxContainer/No" to="." method="_on_no_button_down"]

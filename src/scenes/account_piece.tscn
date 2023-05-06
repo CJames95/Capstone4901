@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://dphlqbdctqal8"]
+
+[ext_resource type="Script" path="res://src/scripts/account_piece.gd" id="1_mvocb"]
+[ext_resource type="Texture2D" uid="uid://b5rt40hrgbk5p" path="res://src/art/Main and Puzzle Select/Puzzle 2/Account.png" id="2_mdo5y"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4ejex"]
+size = Vector2(610, 610)
+
+[node name="Account Piece" type="Node2D"]
+script = ExtResource("1_mvocb")
+
+[node name="Account" type="Sprite2D" parent="."]
+texture = ExtResource("2_mdo5y")
+
+[node name="Area2D" type="Area2D" parent="Account"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Account/Area2D"]
+scale = Vector2(0.25, 0.25)
+shape = SubResource("RectangleShape2D_4ejex")
+
+[connection signal="input_event" from="Account/Area2D" to="." method="_on_area_2d_input_event"]

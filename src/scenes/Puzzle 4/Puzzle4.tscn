@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://bmyig2wae7nqa"]
+[gd_scene load_steps=25 format=3]
 
 [ext_resource type="Script" path="res://src/scripts/Puzzle 1/Puzzle1.gd" id="1_bi1m2"]
 [ext_resource type="Texture2D" uid="uid://cpyowiueotikd" path="res://src/art/Main and Puzzle Select/Puzzle Select/Puzzle_Select_Elements-1.png" id="2_dcump"]
