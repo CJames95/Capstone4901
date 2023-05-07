@@ -1,0 +1,89 @@
+[gd_scene load_steps=7 format=3 uid="uid://kkpp3w5hk3ni"]
+
+[ext_resource type="Texture2D" uid="uid://cpyowiueotikd" path="res://src/art/Main and Puzzle Select/Puzzle_Select_Elements-1.png" id="1_l5mc4"]
+[ext_resource type="Script" path="res://Puzzles/Puzzle1_Story.gd" id="1_mhay6"]
+[ext_resource type="Texture2D" uid="uid://dy8mwu10dqyh5" path="res://src/art/Main and Puzzle Select/Dialogue_Elements.png" id="2_k3iod"]
+[ext_resource type="PackedScene" uid="uid://bye4td4gbfh55" path="res://src/scenes/Stories and Tutorials/scene_transition.tscn" id="3_pet8b"]
+[ext_resource type="Texture2D" uid="uid://dxfshyf0w6uwr" path="res://src/art/Main and Puzzle Select/DialogueIndicatir1.png" id="4_pnhne"]
+[ext_resource type="Texture2D" uid="uid://clek2wthj5jkv" path="res://src/art/Main and Puzzle Select/DialogueIndicator2.png" id="5_rw8vl"]
+
+[node name="Puzzle1_Story" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_mhay6")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_l5mc4")
+expand_mode = 3
+
+[node name="DialogueBox" type="BoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -750.0
+offset_top = -380.0
+offset_right = 750.0
+offset_bottom = -80.0
+grow_horizontal = 2
+grow_vertical = 0
+alignment = 1
+
+[node name="DialogueBackground" type="TextureRect" parent="DialogueBox"]
+layout_mode = 2
+texture = ExtResource("2_k3iod")
+expand_mode = 3
+
+[node name="Name" type="RichTextLabel" parent="DialogueBox/DialogueBackground"]
+layout_mode = 1
+anchors_preset = -1
+offset_left = 66.0
+offset_top = 19.0
+offset_right = 350.0
+offset_bottom = 84.0
+theme_override_font_sizes/normal_font_size = 50
+text = "Name"
+scroll_active = false
+autowrap_mode = 0
+
+[node name="Chat" type="RichTextLabel" parent="DialogueBox/DialogueBackground"]
+layout_mode = 2
+offset_left = 85.0
+offset_top = 116.0
+offset_right = 989.0
+offset_bottom = 235.0
+theme_override_font_sizes/normal_font_size = 30
+text = "Chat"
+
+[node name="NextBtn" type="TextureButton" parent="DialogueBox/DialogueBackground"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -116.678
+offset_top = -99.0
+offset_right = -36.678
+offset_bottom = -19.0
+grow_horizontal = 0
+grow_vertical = 0
+texture_normal = ExtResource("4_pnhne")
+texture_pressed = ExtResource("5_rw8vl")
+ignore_texture_size = true
+stretch_mode = 4
+
+[node name="SceneTransition" parent="." instance=ExtResource("3_pet8b")]
