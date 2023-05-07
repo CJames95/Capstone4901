@@ -10,5 +10,5 @@ func _on_home_btn_pressed():
 
 #Skip Button
 func _on_skip_btn_pressed():
-	get_tree().change_scene_to_file("res://src/scenes/Puzzle 3/Puzzle3.tscn")
+	get_tree().change_scene_to_file("res://src/scenes/Puzzle 2/Puzzle2.tscn")
 

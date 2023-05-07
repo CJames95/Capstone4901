@@ -10,4 +10,4 @@ func _on_texture_button_pressed():
 	get_tree().change_scene_to_file("res://src/scenes/MainScreen.tscn")
 
 func _on_skip_btn_pressed():
-	get_tree().change_scene_to_file("res://src/scenes/Puzzle 1/Tutorial1.tscn")
+	get_tree().change_scene_to_file("res://src/scenes/Puzzle 2/Tutorial2.tscn")

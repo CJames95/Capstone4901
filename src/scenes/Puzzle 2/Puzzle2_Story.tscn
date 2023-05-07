@@ -1,7 +1,7 @@
 [gd_scene load_steps=15 format=3 uid="uid://crltjaprqtykd"]
 
-[ext_resource type="Script" path="res://src/scripts/Puzzle 1/Puzzle1_Story.gd" id="1_17cip"]
-[ext_resource type="Texture2D" uid="uid://cpyowiueotikd" path="res://src/art/Main and Puzzle Select/Puzzle Select/Puzzle_Select_Elements-1.png" id="2_p5vff"]
+[ext_resource type="Script" path="res://src/scripts/Puzzle 2/Puzzle2_Story.gd" id="1_u765k"]
+[ext_resource type="Texture2D" uid="uid://cpyowiueotikd" path="res://src/art/Main and Puzzle Select/Puzzle_Select_Elements-1.png" id="2_p5vff"]
 [ext_resource type="PackedScene" uid="uid://cj8opweho7ldl" path="res://src/scenes/Puzzle 1/scene_transition.tscn" id="3_ffepr"]
 [ext_resource type="Script" path="res://src/scripts/Puzzle 1/Dialogue_P1.gd" id="4_k7tpd"]
 [ext_resource type="Texture2D" uid="uid://bjkygddnv1gwm" path="res://src/art/Main and Puzzle Select/Dialogue/Dialoge_TextBox.png" id="5_trmh7"]
@@ -22,7 +22,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_17cip")
+script = ExtResource("1_u765k")
 
 [node name="Background" type="TextureRect" parent="."]
 layout_mode = 1

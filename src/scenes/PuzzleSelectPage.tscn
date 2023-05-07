@@ -1,6 +1,6 @@
 [gd_scene load_steps=30 format=3 uid="uid://cwveo82vcsefs"]
 
-[ext_resource type="Texture2D" uid="uid://cpyowiueotikd" path="res://src/art/Main and Puzzle Select/Puzzle Select/Puzzle_Select_Elements-1.png" id="2_7daq8"]
+[ext_resource type="Texture2D" uid="uid://cpyowiueotikd" path="res://src/art/Main and Puzzle Select/Puzzle_Select_Elements-1.png" id="2_7daq8"]
 [ext_resource type="Texture2D" uid="uid://bipnwkrp0l1lt" path="res://src/art/Main and Puzzle Select/Puzzle Select/Puzzle1.png" id="2_ebi6f"]
 [ext_resource type="Texture2D" uid="uid://dc41hblv1gkpu" path="res://src/art/Main and Puzzle Select/Puzzle Select/Lock_Btn.png" id="3_fmtt3"]
 [ext_resource type="Texture2D" uid="uid://cc7epw1lcyx4k" path="res://src/art/Main and Puzzle Select/Puzzle Select/Main_P1Btn_Normal.png" id="4_80owl"]
@@ -36,6 +36,9 @@ func _on_back_btn_pressed():
 
 func _on_select_puzzle_pressed():
 	get_tree().change_scene_to_file(\"res://src/scenes/Puzzle 1/Puzzle1_Story.tscn\")
+
+func _on_select_puzzle_2_pressed():
+	get_tree().change_scene_to_file(\"res://src/scenes/Puzzle 2/Puzzle2_Story.tscn\")
 "
 
 [sub_resource type="LabelSettings" id="LabelSettings_33g3c"]
@@ -133,7 +136,7 @@ texture_disabled = ExtResource("3_fmtt3")
 ignore_texture_size = true
 stretch_mode = 4
 
-[node name="selectPuzzle" type="TextureButton" parent="MarginContainer/GridContainer/Puzzle_2"]
+[node name="selectPuzzle2" type="TextureButton" parent="MarginContainer/GridContainer/Puzzle_2"]
 custom_minimum_size = Vector2(70, 60)
 layout_mode = 2
 size_flags_vertical = 6
@@ -144,7 +147,7 @@ texture_hover = ExtResource("10_uci4r")
 ignore_texture_size = true
 stretch_mode = 4
 
-[node name="puzzle2" type="Label" parent="MarginContainer/GridContainer/Puzzle_2/selectPuzzle"]
+[node name="puzzle2" type="Label" parent="MarginContainer/GridContainer/Puzzle_2/selectPuzzle2"]
 visible = false
 layout_mode = 2
 offset_left = 57.0
@@ -322,4 +325,5 @@ texture_hover = ExtResource("11_e1egb")
 stretch_mode = 4
 
 [connection signal="pressed" from="MarginContainer/GridContainer/Puzzle_1/selectPuzzle" to="." method="_on_select_puzzle_pressed"]
+[connection signal="pressed" from="MarginContainer/GridContainer/Puzzle_2/selectPuzzle2" to="." method="_on_select_puzzle_2_pressed"]
 [connection signal="pressed" from="BackBtn" to="." method="_on_back_btn_pressed"]
