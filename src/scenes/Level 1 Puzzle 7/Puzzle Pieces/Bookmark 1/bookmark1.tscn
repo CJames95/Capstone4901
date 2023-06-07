@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://8goffwbidt26"]
+
+[ext_resource type="Script" path="res://src/scenes/Puzzle 1/Puzzle Pieces/Bookmark 1/bookmark1.gd" id="1_o7q22"]
+[ext_resource type="Texture2D" uid="uid://upjc5i4dvwpd" path="res://src/art/Main and Puzzle Select/Puzzle 1/Puzzle Pieces/Puzzle1_Piece6.png" id="2_3oqak"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4ejex"]
+size = Vector2(800, 120)
+
+[node name="Bookmark1 Piece" type="Node2D"]
+script = ExtResource("1_o7q22")
+
+[node name="Bookmark1" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_3oqak")
+
+[node name="Area2D" type="Area2D" parent="Bookmark1"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bookmark1/Area2D"]
+shape = SubResource("RectangleShape2D_4ejex")
+
+[connection signal="input_event" from="Bookmark1/Area2D" to="." method="_on_area_2d_input_event"]

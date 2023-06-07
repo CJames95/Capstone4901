@@ -1,0 +1,92 @@
+[gd_scene load_steps=7 format=3 uid="uid://c13f18d37fvui"]
+
+[ext_resource type="Script" path="res://src/scripts/Puzzle 1/Puzzle Pieces/Searchbar 1/searchbar_drag_and_drop.gd" id="1_7wwtm"]
+[ext_resource type="Texture2D" uid="uid://6wu3208d583v" path="res://src/art/Main and Puzzle Select/Puzzle 1/Puzzle Pieces/Search Bar_1.png" id="2_3en7b"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4ejex"]
+size = Vector2(1800, 160)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7gtb0"]
+bg_color = Color(0.807843, 0.807843, 0.807843, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eeugl"]
+bg_color = Color(0.341176, 0.607843, 0.945098, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3bash"]
+bg_color = Color(0.341176, 0.607843, 0.945098, 1)
+
+[node name="Search Bar Piece" type="Node2D" groups=["searchbar"]]
+script = ExtResource("1_7wwtm")
+
+[node name="Search" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_3en7b")
+
+[node name="Search Text" type="RichTextLabel" parent="Search"]
+visible = false
+offset_left = -328.0
+offset_top = -16.0
+offset_right = 300.0
+offset_bottom = 20.0
+theme_override_font_sizes/normal_font_size = 22
+text = "Search"
+fit_content = true
+scroll_active = false
+text_direction = 1
+
+[node name="Area2D" type="Area2D" parent="Search"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Search/Area2D"]
+shape = SubResource("RectangleShape2D_4ejex")
+
+[node name="Search Menu" type="Panel" parent="."]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_right = 223.0
+offset_bottom = 41.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_7gtb0")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Search Menu"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -106.5
+offset_top = -15.5
+offset_right = 106.5
+offset_bottom = 15.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Search Text Checkbox" type="CheckBox" parent="Search Menu/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_styles/hover = SubResource("StyleBoxFlat_eeugl")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_3bash")
+text = "Enable Search Text"
+
+[node name="Timer" type="Timer" parent="Search Menu"]
+one_shot = true
+
+[connection signal="gui_input" from="Search/Search Text" to="." method="_on_rich_text_label_gui_input"]
+[connection signal="input_event" from="Search/Area2D" to="." method="_on_area_2d_input_event"]
+[connection signal="mouse_entered" from="Search Menu" to="." method="_on_search_menu_mouse_entered"]
+[connection signal="mouse_exited" from="Search Menu" to="." method="_on_search_menu_mouse_exited"]
+[connection signal="mouse_entered" from="Search Menu/VBoxContainer/Search Text Checkbox" to="." method="_on_search_text_checkbox_mouse_entered"]
+[connection signal="mouse_exited" from="Search Menu/VBoxContainer/Search Text Checkbox" to="." method="_on_search_text_checkbox_mouse_exited"]
+[connection signal="toggled" from="Search Menu/VBoxContainer/Search Text Checkbox" to="." method="_on_search_text_checkbox_toggled"]
+[connection signal="timeout" from="Search Menu/Timer" to="." method="_on_timer_timeout"]

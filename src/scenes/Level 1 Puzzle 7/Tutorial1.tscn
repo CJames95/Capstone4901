@@ -1,0 +1,104 @@
+[gd_scene load_steps=15 format=3 uid="uid://d3t72p6rnxcxm"]
+
+[ext_resource type="Script" path="res://src/scripts/Puzzle 1/Tutorial1.gd" id="1_ya32w"]
+[ext_resource type="Texture2D" uid="uid://cpyowiueotikd" path="res://src/art/Main and Puzzle Select/Puzzle_Select_Elements-1.png" id="2_bxk5r"]
+[ext_resource type="Texture2D" uid="uid://deu1dsoouwfg" path="res://src/art/Main and Puzzle Select/Tutorial/Rectangle 51.png" id="3_c7qbr"]
+[ext_resource type="Texture2D" uid="uid://cyjl86tdyq8x6" path="res://src/art/Main and Puzzle Select/Tutorial/Tutorial_HomeBtn_Normal.png" id="4_gbiwe"]
+[ext_resource type="Texture2D" uid="uid://bmjqaa0bwx7qk" path="res://src/art/Main and Puzzle Select/Tutorial/Tutorial_HomeBtn_Clicked.png" id="5_3iecb"]
+[ext_resource type="Texture2D" uid="uid://brhmpit84lofh" path="res://src/art/Main and Puzzle Select/Tutorial/Tutorial_HomeBtn_Selected.png" id="6_qwe0s"]
+[ext_resource type="Texture2D" uid="uid://cy2lp0671tfil" path="res://src/art/Main and Puzzle Select/Tutorial/Skip_Btn_Normal.png" id="7_ttlfw"]
+[ext_resource type="Texture2D" uid="uid://bucgk8tamm0qj" path="res://src/art/Main and Puzzle Select/Tutorial/Skip_Btn_Clicked.png" id="8_5gsy4"]
+[ext_resource type="Texture2D" uid="uid://b24xlub20sv61" path="res://src/art/Main and Puzzle Select/Tutorial/Skip_Btn_Selected.png" id="9_sntp6"]
+[ext_resource type="Texture2D" uid="uid://dgiod3wnp521d" path="res://src/art/Main and Puzzle Select/Tutorial/Tutorial_NextBtn_Normal.png" id="10_v6c45"]
+[ext_resource type="Texture2D" uid="uid://ct1s23i7kcis8" path="res://src/art/Main and Puzzle Select/Tutorial/Tutorial_NextBtn_Clicked.png" id="11_p1ir0"]
+[ext_resource type="Texture2D" uid="uid://lrwrsvits2wb" path="res://src/art/Main and Puzzle Select/Tutorial/Tutorial_NextBtn_Selected.png" id="12_4qkpa"]
+[ext_resource type="PackedScene" uid="uid://cj8opweho7ldl" path="res://src/scenes/Puzzle 1/scene_transition.tscn" id="13_ydwjm"]
+[ext_resource type="Script" path="res://src/scripts/Puzzle 1/Dialogue_T1.gd" id="14_e0tus"]
+
+[node name="Tutorial" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ya32w")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_bxk5r")
+expand_mode = 3
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = -2.0
+offset_top = 149.0
+offset_right = 1649.0
+offset_bottom = 962.0
+texture = ExtResource("3_c7qbr")
+expand_mode = 3
+
+[node name="HomeBtn" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = -1
+offset_left = 103.0
+offset_top = 85.0
+offset_right = 228.0
+offset_bottom = 219.0
+texture_normal = ExtResource("4_gbiwe")
+texture_pressed = ExtResource("5_3iecb")
+texture_hover = ExtResource("6_qwe0s")
+ignore_texture_size = true
+stretch_mode = 4
+
+[node name="SkipBtn" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = -1
+offset_left = 235.0
+offset_top = 85.0
+offset_right = 360.0
+offset_bottom = 244.0
+texture_normal = ExtResource("7_ttlfw")
+texture_pressed = ExtResource("8_5gsy4")
+texture_hover = ExtResource("9_sntp6")
+ignore_texture_size = true
+stretch_mode = 4
+
+[node name="NextBtn" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 1120.0
+offset_top = 917.0
+offset_right = 1217.0
+offset_bottom = 1009.0
+texture_normal = ExtResource("10_v6c45")
+texture_pressed = ExtResource("11_p1ir0")
+texture_hover = ExtResource("12_4qkpa")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="SceneTransition" parent="." instance=ExtResource("13_ydwjm")]
+
+[node name="Dialogue" type="CanvasLayer" parent="."]
+script = ExtResource("14_e0tus")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Dialogue"]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Chat2" type="RichTextLabel" parent="Dialogue/NinePatchRect"]
+layout_mode = 2
+offset_left = 312.0
+offset_top = 427.0
+offset_right = 1180.0
+offset_bottom = 635.0
+theme_override_font_sizes/normal_font_size = 30
+text = "Chat"
+
+[connection signal="pressed" from="HomeBtn" to="." method="_on_home_btn_pressed"]
+[connection signal="pressed" from="SkipBtn" to="." method="_on_skip_btn_pressed"]
+[connection signal="pressed" from="NextBtn" to="Dialogue" method="_on_next_btn_pressed"]

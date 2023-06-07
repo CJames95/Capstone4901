@@ -1,0 +1,133 @@
+[gd_scene load_steps=15 format=3 uid="uid://deivgdo6nfd44"]
+
+[ext_resource type="Script" path="res://src/scripts/Puzzle 1/Puzzle1_Story.gd" id="1_hvw74"]
+[ext_resource type="Texture2D" uid="uid://cpyowiueotikd" path="res://src/art/Main and Puzzle Select/Puzzle_Select_Elements-1.png" id="2_cwior"]
+[ext_resource type="PackedScene" uid="uid://cj8opweho7ldl" path="res://src/scenes/Puzzle 1/scene_transition.tscn" id="3_6xcsd"]
+[ext_resource type="Script" path="res://src/scripts/Puzzle 1/Dialogue_P1.gd" id="4_27m1c"]
+[ext_resource type="Texture2D" uid="uid://bjkygddnv1gwm" path="res://src/art/Main and Puzzle Select/Dialogue/Dialoge_TextBox.png" id="5_035bn"]
+[ext_resource type="Texture2D" uid="uid://bl1tcu1h3bd66" path="res://src/art/Main and Puzzle Select/Dialogue/Dialogue_NextBtn_Normal.png" id="6_x6ana"]
+[ext_resource type="Texture2D" uid="uid://bdvg8i5yuvu1a" path="res://src/art/Main and Puzzle Select/Dialogue/Dialogue_NextBtn_Clicked.png" id="7_upxv1"]
+[ext_resource type="Texture2D" uid="uid://bwtfqq2ysijxg" path="res://src/art/Main and Puzzle Select/Dialogue/Dialogue_NextBtn_Selected.png" id="8_qgx81"]
+[ext_resource type="Texture2D" uid="uid://d4lxmexf6qxqb" path="res://src/art/Main and Puzzle Select/Dialogue/HomeBtn_Normal.png" id="9_iktp1"]
+[ext_resource type="Texture2D" uid="uid://c7bcfgp10hxai" path="res://src/art/Main and Puzzle Select/Dialogue/HomeBtn_Clicked.png" id="10_1y7o1"]
+[ext_resource type="Texture2D" uid="uid://c18q4ryrfq8oh" path="res://src/art/Main and Puzzle Select/Dialogue/HomeBtn_Selected.png" id="11_ijeqy"]
+[ext_resource type="Texture2D" uid="uid://doke2pam2rdkk" path="res://src/art/Main and Puzzle Select/Dialogue/Story_SkipBtn_Normal.png" id="12_7h11h"]
+[ext_resource type="Texture2D" uid="uid://ur7sf6h0or24" path="res://src/art/Main and Puzzle Select/Dialogue/Story_SkipBtn_Clicked.png" id="13_a7tlj"]
+[ext_resource type="Texture2D" uid="uid://bx7tmnx8eek4s" path="res://src/art/Main and Puzzle Select/Dialogue/Story_SkipBtn_Selected.png" id="14_urfhd"]
+
+[node name="Puzzle1_Story" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_hvw74")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_cwior")
+expand_mode = 3
+
+[node name="SceneTransition" parent="." instance=ExtResource("3_6xcsd")]
+
+[node name="Dialogue" type="CanvasLayer" parent="."]
+script = ExtResource("4_27m1c")
+
+[node name="DialogueBox" type="BoxContainer" parent="Dialogue"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -750.0
+offset_top = -380.0
+offset_right = 750.0
+offset_bottom = -80.0
+grow_horizontal = 2
+grow_vertical = 0
+alignment = 1
+
+[node name="DialogueBackground" type="TextureRect" parent="Dialogue/DialogueBox"]
+layout_mode = 2
+texture = ExtResource("5_035bn")
+expand_mode = 3
+
+[node name="NextBtn" type="TextureButton" parent="Dialogue/DialogueBox/DialogueBackground"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -116.678
+offset_top = -99.0
+offset_right = -36.678
+offset_bottom = -19.0
+grow_horizontal = 0
+grow_vertical = 0
+texture_normal = ExtResource("6_x6ana")
+texture_pressed = ExtResource("7_upxv1")
+texture_hover = ExtResource("8_qgx81")
+ignore_texture_size = true
+stretch_mode = 4
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Dialogue"]
+offset_right = 1919.0
+offset_bottom = 1081.0
+
+[node name="Name2" type="RichTextLabel" parent="Dialogue/NinePatchRect"]
+layout_mode = 1
+anchors_preset = -1
+offset_left = 512.0
+offset_top = 720.0
+offset_right = 781.0
+offset_bottom = 800.0
+theme_override_font_sizes/normal_font_size = 40
+text = "Name"
+scroll_active = false
+autowrap_mode = 0
+tab_size = 3
+
+[node name="Chat2" type="RichTextLabel" parent="Dialogue/NinePatchRect"]
+layout_mode = 2
+offset_left = 494.0
+offset_top = 817.0
+offset_right = 1362.0
+offset_bottom = 945.0
+theme_override_font_sizes/normal_font_size = 30
+text = "Chat"
+
+[node name="HomeBtn" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 50.0
+offset_top = 50.0
+offset_right = 150.0
+offset_bottom = 150.0
+texture_normal = ExtResource("9_iktp1")
+texture_pressed = ExtResource("10_1y7o1")
+texture_hover = ExtResource("11_ijeqy")
+ignore_texture_size = true
+stretch_mode = 4
+
+[node name="SkipBtn" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 180.0
+offset_top = 50.0
+offset_right = 270.0
+offset_bottom = 140.0
+texture_normal = ExtResource("12_7h11h")
+texture_pressed = ExtResource("13_a7tlj")
+texture_hover = ExtResource("14_urfhd")
+ignore_texture_size = true
+stretch_mode = 4
+
+[connection signal="pressed" from="Dialogue/DialogueBox/DialogueBackground/NextBtn" to="Dialogue" method="_on_next_btn_pressed"]
+[connection signal="pressed" from="HomeBtn" to="." method="_on_texture_button_pressed"]
+[connection signal="pressed" from="SkipBtn" to="." method="_on_skip_btn_pressed"]

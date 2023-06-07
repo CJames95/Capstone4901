@@ -1,0 +1,307 @@
+[gd_scene load_steps=35 format=3 uid="uid://br638rn12snmx"]
+
+[ext_resource type="Script" path="res://src/scripts/puzzle_scene.gd" id="1_qnywx"]
+[ext_resource type="Texture2D" uid="uid://cpyowiueotikd" path="res://src/art/Main and Puzzle Select/Puzzle_Select_Elements-1.png" id="2_pm1no"]
+[ext_resource type="Texture2D" uid="uid://bkgmw5t75fd45" path="res://src/art/Main and Puzzle Select/Puzzle 1/Puzzle Elements.png" id="3_h0v8b"]
+[ext_resource type="Script" path="res://src/scripts/workspace.gd" id="4_s6img"]
+[ext_resource type="Texture2D" uid="uid://cgqjij2g8o47i" path="res://src/art/Main and Puzzle Select/Puzzle 1/Puzzle_HomeBtn_Normal.png" id="5_psvc3"]
+[ext_resource type="Texture2D" uid="uid://475uhstd1i6a" path="res://src/art/Main and Puzzle Select/Puzzle 1/Puzzle_HomeBtn_Clicked.png" id="6_dx8mf"]
+[ext_resource type="Texture2D" uid="uid://du3kls6hqnyjt" path="res://src/art/Main and Puzzle Select/Puzzle 1/Puzzle_HomeBtn_Selected.png" id="7_bvi4u"]
+[ext_resource type="Texture2D" uid="uid://fuwbcduqwn3y" path="res://src/art/Main and Puzzle Select/Puzzle 1/Puzzle_ConfirmBtn_Normal.png" id="8_gxq1g"]
+[ext_resource type="Texture2D" uid="uid://hsy0x5k6md1t" path="res://src/art/Main and Puzzle Select/Puzzle 1/Puzzle_ConfirmBtn_Clicked.png" id="9_71srp"]
+[ext_resource type="Texture2D" uid="uid://c60a1ysuwtits" path="res://src/art/Main and Puzzle Select/Puzzle 1/Puzzle_ConfirmBtn_Selected.png" id="10_h2lst"]
+[ext_resource type="Texture2D" uid="uid://gd0qcemqdlii" path="res://src/art/Main and Puzzle Select/Puzzle 1/InfoBtn_Normal.png" id="11_ik8qf"]
+[ext_resource type="Texture2D" uid="uid://wa262r6jtxsi" path="res://src/art/Main and Puzzle Select/Puzzle 1/InfoBtn_Clicked.png" id="12_t8kvw"]
+[ext_resource type="Texture2D" uid="uid://rxwacwm75vg5" path="res://src/art/Main and Puzzle Select/Puzzle 1/InfoBtn_Selected.png" id="13_rvhca"]
+[ext_resource type="Texture2D" uid="uid://cn17xogji8mmu" path="res://src/art/Main and Puzzle Select/Puzzle 1/HintBtn_Normal.png" id="14_0rplo"]
+[ext_resource type="Texture2D" uid="uid://dc7v14y7n0j45" path="res://src/art/Main and Puzzle Select/Puzzle 1/HintBtn_Clicked.png" id="15_yiety"]
+[ext_resource type="Texture2D" uid="uid://k3jaoylpso1q" path="res://src/art/Main and Puzzle Select/Puzzle 1/HintBtn_Selected.png" id="16_8psq4"]
+[ext_resource type="Texture2D" uid="uid://cmp1nlgjpx3fv" path="res://src/art/Main and Puzzle Select/Puzzle 1/UndoBtn_Normal.png" id="17_p58f6"]
+[ext_resource type="Texture2D" uid="uid://cr0xq7frplu8l" path="res://src/art/Main and Puzzle Select/Puzzle 1/UndoBtn_Clicked.png" id="18_s7rr5"]
+[ext_resource type="Texture2D" uid="uid://bdrqdfwqi23wc" path="res://src/art/Main and Puzzle Select/Puzzle 1/UndoBtn_Selected.png" id="19_qrsn6"]
+[ext_resource type="Texture2D" uid="uid://q5bgyubyxf20" path="res://src/art/Main and Puzzle Select/Puzzle 1/RedoBtn_Normal.png" id="20_akf3e"]
+[ext_resource type="Texture2D" uid="uid://b4wk3y71qgni1" path="res://src/art/Main and Puzzle Select/Puzzle 1/RedoBtn_Clicked.png" id="21_jbvi5"]
+[ext_resource type="Texture2D" uid="uid://bdhtfj0nyogas" path="res://src/art/Main and Puzzle Select/Puzzle 1/RedoBtn_Selected.png" id="22_oofaj"]
+[ext_resource type="Texture2D" uid="uid://c7rxemp8euioy" path="res://src/art/Main and Puzzle Select/Puzzle 1/RefreshBtn_Normal.png" id="23_lnjg3"]
+[ext_resource type="Texture2D" uid="uid://c4jtrmbxiv6n1" path="res://src/art/Main and Puzzle Select/Puzzle 1/RefreshBtn_Clicked.png" id="24_n30c2"]
+[ext_resource type="Texture2D" uid="uid://cafg38eegiwk8" path="res://src/art/Main and Puzzle Select/Puzzle 1/RefreshBtn_Selected.png" id="25_131qa"]
+[ext_resource type="PackedScene" uid="uid://db6sy2t7bduaw" path="res://src/scenes/Puzzle 1/Puzzle Pieces/Navbar Button 1/navbar1_tray.tscn" id="26_v0gg2"]
+[ext_resource type="PackedScene" uid="uid://cciterwdmtl46" path="res://src/scenes/Puzzle 1/Puzzle Pieces/Help Button 1/help1_tray.tscn" id="27_vd7xg"]
+[ext_resource type="PackedScene" uid="uid://dedkl2u2wpngo" path="res://src/scenes/Puzzle 1/Puzzle Pieces/Logo Name 1/logo_name1_tray.tscn" id="28_84vpd"]
+[ext_resource type="PackedScene" uid="uid://85xcrly7rpp0" path="res://src/scenes/Puzzle 1/Puzzle Pieces/Logo Name 2/logo_name2_tray.tscn" id="29_irc3h"]
+[ext_resource type="PackedScene" uid="uid://bhlt8k8851465" path="res://src/scenes/Puzzle 1/Puzzle Pieces/Searchbar 1/search_grab_zone.tscn" id="30_3n4sm"]
+[ext_resource type="PackedScene" uid="uid://dbxv8m6hsipm5" path="res://src/scenes/Puzzle 1/Puzzle Pieces/Searchbar 2/searchbar2_grab_zone.tscn" id="31_t60x7"]
+[ext_resource type="PackedScene" uid="uid://cha1mn8xvpmxt" path="res://src/scenes/Puzzle 1/Puzzle Pieces/Searchbar 3/searchbar3_grab_zone.tscn" id="32_wpr8s"]
+[ext_resource type="PackedScene" uid="uid://cp6nhqwshavpc" path="res://src/scenes/Puzzle 1/Puzzle Pieces/Search Button 1/search1_tray.tscn" id="33_n571s"]
+[ext_resource type="PackedScene" uid="uid://cb152brx3j325" path="res://src/scenes/Puzzle 1/Puzzle Pieces/Bookmark 1/bookmark_tray.tscn" id="34_p4gku"]
+
+[node name="Puzzle1" type="Node"]
+script = ExtResource("1_qnywx")
+
+[node name="Background" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_pm1no")
+expand_mode = 1
+
+[node name="WebTemplate" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_h0v8b")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="Container" type="Container" parent="WebTemplate"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -891.0
+offset_top = -848.0
+offset_right = 509.0
+offset_bottom = -68.0
+grow_horizontal = 2
+grow_vertical = 0
+script = ExtResource("4_s6img")
+
+[node name="Home_Confirm_Btn" type="MarginContainer" parent="."]
+custom_minimum_size = Vector2(100, 1)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1538.0
+offset_top = 959.0
+offset_right = -35.0
+offset_bottom = -3.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GridContainer" type="GridContainer" parent="Home_Confirm_Btn"]
+layout_mode = 2
+columns = 2
+
+[node name="HomeBtn" type="TextureButton" parent="Home_Confirm_Btn/GridContainer"]
+custom_minimum_size = Vector2(175, 75)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+texture_normal = ExtResource("5_psvc3")
+texture_pressed = ExtResource("6_dx8mf")
+texture_hover = ExtResource("7_bvi4u")
+ignore_texture_size = true
+stretch_mode = 4
+
+[node name="ConfirmBtn" type="TextureButton" parent="Home_Confirm_Btn/GridContainer"]
+custom_minimum_size = Vector2(175, 75)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+texture_normal = ExtResource("8_gxq1g")
+texture_pressed = ExtResource("9_71srp")
+texture_hover = ExtResource("10_h2lst")
+ignore_texture_size = true
+stretch_mode = 4
+
+[node name="Info_Container" type="MarginContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1324.0
+offset_top = 141.0
+offset_right = -459.0
+offset_bottom = -871.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="InfoHintContainer" type="GridContainer" parent="Info_Container"]
+clip_contents = true
+layout_direction = 3
+layout_mode = 2
+columns = 2
+
+[node name="InfoBtn" type="TextureButton" parent="Info_Container/InfoHintContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+texture_normal = ExtResource("11_ik8qf")
+texture_pressed = ExtResource("12_t8kvw")
+texture_hover = ExtResource("13_rvhca")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="HintBtn" type="TextureButton" parent="Info_Container/InfoHintContainer"]
+clip_contents = true
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+texture_normal = ExtResource("14_0rplo")
+texture_pressed = ExtResource("15_yiety")
+texture_hover = ExtResource("16_8psq4")
+ignore_texture_size = true
+stretch_mode = 4
+
+[node name="Edit_Container" type="MarginContainer" parent="."]
+offset_left = 251.0
+offset_top = 146.0
+offset_right = 438.0
+offset_bottom = 210.0
+
+[node name="GridContainer" type="GridContainer" parent="Edit_Container"]
+layout_mode = 2
+columns = 3
+
+[node name="UndoBtn" type="TextureButton" parent="Edit_Container/GridContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+texture_normal = ExtResource("17_p58f6")
+texture_pressed = ExtResource("18_s7rr5")
+texture_hover = ExtResource("19_qrsn6")
+ignore_texture_size = true
+stretch_mode = 4
+
+[node name="RedoBtn" type="TextureButton" parent="Edit_Container/GridContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+texture_normal = ExtResource("20_akf3e")
+texture_pressed = ExtResource("21_jbvi5")
+texture_hover = ExtResource("22_oofaj")
+ignore_texture_size = true
+stretch_mode = 4
+
+[node name="RefreshBtn" type="TextureButton" parent="Edit_Container/GridContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+texture_normal = ExtResource("23_lnjg3")
+texture_pressed = ExtResource("24_n30c2")
+texture_hover = ExtResource("25_131qa")
+ignore_texture_size = true
+stretch_mode = 4
+
+[node name="UI Tray" type="ScrollContainer" parent="."]
+offset_left = 1541.0
+offset_top = 53.0
+offset_right = 1880.0
+offset_bottom = 935.0
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.15
+vertical_scroll_mode = 2
+
+[node name="Vertical Box Container" type="VBoxContainer" parent="UI Tray"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Navbar1 Slot" parent="UI Tray/Vertical Box Container" instance=ExtResource("26_v0gg2")]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Help1 Slot" parent="UI Tray/Vertical Box Container" instance=ExtResource("27_vd7xg")]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Logo Name1 Slot" parent="UI Tray/Vertical Box Container" instance=ExtResource("28_84vpd")]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Logo Name2 Slot" parent="UI Tray/Vertical Box Container" instance=ExtResource("29_irc3h")]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Searchbar1 Slot" parent="UI Tray/Vertical Box Container" instance=ExtResource("30_3n4sm")]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Searchbar2 Slot" parent="UI Tray/Vertical Box Container" instance=ExtResource("31_t60x7")]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Searchbar3 Slot" parent="UI Tray/Vertical Box Container" instance=ExtResource("32_wpr8s")]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Search1 Slot" parent="UI Tray/Vertical Box Container" instance=ExtResource("33_n571s")]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Bookmark1 Slot" parent="UI Tray/Vertical Box Container" instance=ExtResource("34_p4gku")]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Workspace" type="Node" parent="."]
+
+[node name="End Puzzle Confirmation" type="SubViewportContainer" parent="."]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -128.0
+offset_top = -64.0
+offset_right = 128.0
+offset_bottom = 64.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="End Puzzle Confirmation Viewport" type="SubViewport" parent="End Puzzle Confirmation"]
+handle_input_locally = false
+size = Vector2i(256, 128)
+render_target_update_mode = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="End Puzzle Confirmation/End Puzzle Confirmation Viewport"]
+custom_minimum_size = Vector2(0, 96)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -98.0
+offset_top = -20.0
+offset_right = 98.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="RichTextLabel" type="RichTextLabel" parent="End Puzzle Confirmation/End Puzzle Confirmation Viewport/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+bbcode_enabled = true
+text = "[center]Are you sure you want to finish this puzzle?[/center]"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="End Puzzle Confirmation/End Puzzle Confirmation Viewport/VBoxContainer"]
+layout_mode = 2
+
+[node name="Yes" type="Button" parent="End Puzzle Confirmation/End Puzzle Confirmation Viewport/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Yes"
+
+[node name="No" type="Button" parent="End Puzzle Confirmation/End Puzzle Confirmation Viewport/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "No"
+
+[connection signal="pressed" from="Home_Confirm_Btn/GridContainer/HomeBtn" to="." method="_on_home_btn_pressed"]
+[connection signal="pressed" from="Home_Confirm_Btn/GridContainer/ConfirmBtn" to="." method="_on_confirm_btn_pressed"]
+[connection signal="pressed" from="Info_Container/InfoHintContainer/InfoBtn" to="." method="_on_info_btn_pressed"]
+[connection signal="button_down" from="End Puzzle Confirmation/End Puzzle Confirmation Viewport/VBoxContainer/HBoxContainer/Yes" to="." method="_on_yes_button_down"]
+[connection signal="button_down" from="End Puzzle Confirmation/End Puzzle Confirmation Viewport/VBoxContainer/HBoxContainer/No" to="." method="_on_no_button_down"]

@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://df0chdf23m3op"]
+
+[ext_resource type="Script" path="res://src/scenes/Puzzle 1/Puzzle Pieces/Help Button 1/help1.gd" id="1_mo3uo"]
+[ext_resource type="Texture2D" uid="uid://cdj15skss0puo" path="res://src/art/Main and Puzzle Select/Puzzle 1/Puzzle Pieces/Information Btn.png" id="2_wub3i"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4ejex"]
+size = Vector2(120, 120)
+
+[node name="Help1 Piece" type="Node2D"]
+script = ExtResource("1_mo3uo")
+
+[node name="Help1" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_wub3i")
+
+[node name="Area2D" type="Area2D" parent="Help1"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Help1/Area2D"]
+shape = SubResource("RectangleShape2D_4ejex")
+
+[connection signal="input_event" from="Help1/Area2D" to="." method="_on_area_2d_input_event"]
